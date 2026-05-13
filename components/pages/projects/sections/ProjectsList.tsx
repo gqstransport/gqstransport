@@ -1,7 +1,7 @@
 import { getTranslations } from "next-intl/server";
 import Image from "next/image";
 import { Link } from "@/i18n/navigation";
-import { MapPin, Box, Truck, AlertCircle } from "lucide-react";
+import { ArrowUpRight, MapPin } from "lucide-react";
 import { Reveal, StaggerContainer, StaggerItem } from "@/components/ui/motion-reveal";
 
 export async function ProjectsList() {
@@ -19,78 +19,47 @@ export async function ProjectsList() {
   return (
     <section className="bg-white py-24 lg:py-32 overflow-hidden">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <StaggerContainer staggerDelay={0.2}>
-          <div className="space-y-24">
-            {items.map((project, idx) => (
+        <StaggerContainer staggerDelay={0.1}>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-12">
+            {items.map((project) => (
               <StaggerItem key={project.id}>
-                <div className={`grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-20 items-center ${idx % 2 !== 0 ? 'lg:direction-rtl' : ''}`}>
-                  {/* Image Column */}
-                  <div className="lg:col-span-7">
-                    <Link href={`/projects/${project.id}`} className="block group">
-                      <div className="relative aspect-[16/9] rounded-sm overflow-hidden shadow-2xl group">
-                        <Image
-                          src={project.image}
-                          alt={project.title}
-                          fill
-                          className="object-cover group-hover:scale-105 transition-transform duration-700"
-                        />
-                        <div className="absolute inset-0 bg-gradient-to-t from-[var(--color-primary-navy)]/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-end p-8">
-                           <span className="text-white font-black uppercase tracking-[0.2em] text-xs flex items-center gap-2">View Case Study <span className="h-px w-8 bg-white" /></span>
-                        </div>
-                        <div className="absolute top-0 left-0 w-full h-1 gradient-line" />
+                <Link 
+                  href={`/projects/${project.id}`} 
+                  className="group block space-y-6"
+                >
+                  <div className="relative aspect-[16/11] rounded-sm overflow-hidden shadow-xl border border-gray-100">
+                    <Image
+                      src={project.image}
+                      alt={project.title}
+                      fill
+                      className="object-cover group-hover:scale-105 transition-transform duration-700"
+                    />
+                    
+                    {/* Hover Overlay */}
+                    <div className="absolute inset-0 bg-[var(--color-primary-navy)]/80 opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex flex-col items-center justify-center p-8 text-center">
+                      <div className="h-14 w-14 rounded-full bg-[var(--color-accent-gold)] flex items-center justify-center text-[var(--color-primary-navy)] mb-4 -translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
+                        <ArrowUpRight className="h-7 w-7" />
                       </div>
-                    </Link>
-                  </div>
-
-                  {/* Content Column */}
-                  <div className="lg:col-span-5 space-y-8">
-                    <div className="space-y-4">
-                      <div className="flex items-center gap-3 text-[var(--color-accent-gold)] font-bold text-xs uppercase tracking-[0.2em]">
-                        <span className="h-px w-8 bg-[var(--color-accent-gold)]" />
-                        Project {idx + 1}
-                      </div>
-                      <h2 className="font-heading text-3xl lg:text-4xl font-black text-[var(--color-primary-navy)] uppercase tracking-tight leading-tight">
-                        {project.title}
-                      </h2>
+                      <span className="text-white font-black uppercase tracking-[0.2em] text-[10px]">View Full Case Study</span>
                     </div>
 
-                    <p className="text-lg text-gray-600 font-medium leading-relaxed">
+                    {/* Bottom Gradient for text readability if always visible */}
+                    <div className="absolute inset-x-0 bottom-0 h-1/3 bg-gradient-to-t from-black/60 to-transparent pointer-events-none" />
+                  </div>
+
+                  <div className="space-y-3">
+                    <div className="flex items-center gap-2 text-[var(--color-accent-gold)] font-bold text-[10px] uppercase tracking-widest">
+                      <MapPin className="h-3 w-3" />
+                      {project.location}
+                    </div>
+                    <h3 className="font-heading text-xl font-black text-[var(--color-primary-navy)] uppercase tracking-tight group-hover:text-[var(--color-accent-gold)] transition-colors leading-tight">
+                      {project.title}
+                    </h3>
+                    <p className="text-xs text-gray-500 font-medium leading-relaxed line-clamp-2">
                       {project.scope}
                     </p>
-
-                    <div className="grid grid-cols-1 gap-6 pt-4">
-                      <div className="flex gap-4">
-                        <div className="h-10 w-10 shrink-0 rounded-sm bg-[var(--color-surface-soft)] flex items-center justify-center text-[var(--color-primary-navy)] border border-[var(--color-border)]">
-                          <MapPin className="h-5 w-5" />
-                        </div>
-                        <div>
-                          <p className="text-[10px] font-bold uppercase tracking-widest text-[var(--color-accent-gold)] mb-1">Location</p>
-                          <p className="text-sm font-bold text-[var(--color-primary-navy)] uppercase">{project.location}</p>
-                        </div>
-                      </div>
-
-                      <div className="flex gap-4">
-                        <div className="h-10 w-10 shrink-0 rounded-sm bg-[var(--color-surface-soft)] flex items-center justify-center text-[var(--color-primary-navy)] border border-[var(--color-border)]">
-                          <Truck className="h-5 w-5" />
-                        </div>
-                        <div>
-                          <p className="text-[10px] font-bold uppercase tracking-widest text-[var(--color-accent-gold)] mb-1">Equipment Used</p>
-                          <p className="text-sm font-bold text-gray-500 uppercase">{project.equipment}</p>
-                        </div>
-                      </div>
-
-                      <div className="flex gap-4">
-                        <div className="h-10 w-10 shrink-0 rounded-sm bg-[var(--color-surface-soft)] flex items-center justify-center text-[var(--color-accent-gold)] border border-[var(--color-accent-gold)]/20 shadow-lg shadow-gold/5">
-                          <AlertCircle className="h-5 w-5" />
-                        </div>
-                        <div className="p-4 bg-[var(--color-surface-soft)] rounded-sm border border-[var(--color-border)] italic">
-                          <p className="text-[10px] font-bold uppercase tracking-widest text-[var(--color-primary-navy)] mb-1">Challenge Solved</p>
-                          <p className="text-xs font-medium text-gray-500 leading-relaxed">{project.challenge}</p>
-                        </div>
-                      </div>
-                    </div>
                   </div>
-                </div>
+                </Link>
               </StaggerItem>
             ))}
           </div>
