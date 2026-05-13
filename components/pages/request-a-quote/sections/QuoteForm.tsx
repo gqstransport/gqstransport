@@ -12,7 +12,7 @@ export async function QuoteForm() {
           <form className="bg-white p-8 lg:p-16 shadow-2xl rounded-sm border border-gray-100 space-y-12 relative overflow-hidden">
             {/* Design accents */}
             <div className="absolute top-0 left-0 w-full h-2 gradient-line" />
-            
+
             <div className="space-y-4 text-center">
               <h2 className="text-3xl font-black text-[var(--color-primary-navy)] uppercase tracking-tight">Project Details Form</h2>
               <p className="text-gray-400 font-medium text-sm uppercase tracking-widest">Please fill out the technical requirements below</p>

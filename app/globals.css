@@ -40,6 +40,38 @@
     box-shadow: 0 0 20px -5px var(--color-accent-gold);
   }
 
+  .gradient-line {
+    background: linear-gradient(to right, var(--color-primary-navy) 0%, var(--color-accent-gold) 50%, var(--color-primary-navy) 100%);
+  }
+
+  .gradient-border-t {
+    position: relative;
+  }
+
+  .gradient-border-t::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(to right, var(--color-primary-navy) 0%, var(--color-accent-gold) 50%, var(--color-primary-navy) 100%);
+  }
+
+  .gradient-border-s {
+    position: relative;
+  }
+
+  .gradient-border-s::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    width: 4px;
+    background: linear-gradient(to bottom, var(--color-primary-navy) 0%, var(--color-accent-gold) 50%, var(--color-primary-navy) 100%);
+  }
+
   .glow-hover:hover {
     box-shadow: 0 0 30px -5px var(--color-accent-gold);
   }
