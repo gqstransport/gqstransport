@@ -1,0 +1,604 @@
+{
+  "nav": {
+    "home": "Home",
+    "aboutUs": "About Us",
+    "services": "Services",
+    "fleetEquipment": "Fleet & Equipment",
+    "industries": "Industries",
+    "projects": "Projects",
+    "resources": "Resources",
+    "contactUs": "Contact Us",
+    "requestAQuote": "Request a Quote"
+  },
+  "header": {
+    "companyShort": "GQS",
+    "companyName": "Gulf Quality Structures Est.",
+    "tagline": "Heavy transport & machinery rental",
+    "phone": "+966 55 123 4567",
+    "email": "info@gqsksa.com",
+    "location": "Dammam, Saudi Arabia",
+    "openMenu": "Open menu",
+    "closeMenu": "Close menu"
+  },
+  "navMenu": {
+    "about": {
+      "companyOverview": "Company overview",
+      "visionMission": "Vision & mission",
+      "coreValues": "Core values",
+      "operationalAreas": "Operational areas",
+      "whyChooseUs": "Why choose us"
+    },
+    "services": {
+      "heavyTransport": "Heavy transport services",
+      "heavyMachineryRental": "Heavy machinery rental",
+      "hiabBoomTruck": "Hiab / boom truck",
+      "projectLogistics": "Project logistics"
+    },
+    "fleet": {
+      "flatbedTrailers": "Flatbed trailers",
+      "lowbedTrailers": "Lowbed trailers",
+      "hiabTrucks": "Hiab trucks",
+      "excavators": "Excavators",
+      "cranes": "Cranes",
+      "wheelLoaders": "Wheel loaders",
+      "forklifts": "Forklifts"
+    },
+    "industries": {
+      "oilGas": "Oil & gas",
+      "construction": "Construction",
+      "steelFabrication": "Steel & fabrication",
+      "portsMarine": "Ports & marine",
+      "industrialManufacturing": "Industrial manufacturing",
+      "infrastructureProjects": "Infrastructure projects"
+    },
+    "projects": {
+      "heavyEquipmentTransport": "Heavy equipment transport",
+      "crossBorderLogistics": "Cross-border logistics",
+      "industrialCargoMovement": "Industrial cargo movement",
+      "portHandlingProjects": "Port handling projects",
+      "machineryMobilization": "Machinery mobilization"
+    },
+    "resources": {
+      "blogHome": "Blog & insights",
+      "blogTransportNews": "Heavy transport news",
+      "blogRentalTips": "Machinery rental tips",
+      "blogIndustryUpdates": "Industry updates",
+      "blogProjectLogistics": "Project logistics articles",
+      "blogSafety": "Safety & operations",
+      "careers": "Careers",
+      "applyOnline": "Apply online"
+    },
+    "viewAll": "View all"
+  },
+  "pages": {
+    "home": {
+      "hero": {
+        "kicker": "Heavy Transport & Machinery Rental Solutions in Saudi Arabia",
+        "titleLead": "Reliable Industrial Logistics",
+        "titleHighlight": "Support Across KSA",
+        "description": "Gulf Quality Structure Establishment (GQS) provides reliable heavy transport, machinery rental, and industrial logistics across Saudi Arabia.",
+        "descriptionSecondary": "Professional transport coordination and heavy equipment rental tailored to your project requirements.",
+        "trustedPartner": "Trusted Industrial Support Partner Across Saudi Arabia",
+        "features": [
+          "Heavy Cargo Transportation",
+          "Flatbed & Lowbed Trailer Rental",
+          "Heavy Machinery Rental",
+          "Hiab & Boom Truck Services",
+          "Industrial Logistics Coordination",
+          "GCC Cross-Border Transport Solutions"
+        ],
+        "servingCities": "Serving Dammam, Jubail, Khobar, Riyadh, Jeddah, Yanbu, and GCC routes.",
+        "ctaText": "Request Reliable Transport & Machinery Support Today",
+        "primaryCta": "Get a Quote",
+        "secondaryCta": "Our Services"
+      },
+      "aboutUs": {
+        "title": "About Gulf Quality Structure Establishment (GQS)",
+        "description": "GQS specializes in integrated heavy transport and machinery rental solutions, supporting major industrial projects across the Kingdom.",
+        "descriptionSecondary": "We deliver dependable equipment and logistics support tailored to your project requirements, ensuring smooth execution.",
+        "commitment": "Safety, reliability, and fast mobilization are at the core of everything we do.",
+        "cta": "Learn More"
+      },
+      "vision": {
+        "title": "Our Vision",
+        "description": "To be the most trusted provider of heavy transport and machinery rental in Saudi Arabia through safety and professional excellence."
+      },
+      "mission": {
+        "title": "Our Mission",
+        "description": "To provide efficient transport, lifting, and rental services that support industrial growth and operational excellence across the Kingdom."
+      },
+      "heavyTransport": {
+        "title": "Heavy Transport Services",
+        "subtitle": "Professional Heavy Cargo Transportation Across Saudi Arabia",
+        "description": "GQS offers dependable heavy transport services for industrial, commercial, and infrastructure projects. Our fleet coordination solutions support the transportation of oversized cargo, construction equipment, industrial materials, and project machinery across Saudi Arabia and GCC routes.",
+        "solutionsTitle": "Our Heavy Transport Solutions Include:",
+        "items": {
+          "flatbed": {
+            "title": "Flatbed Trailer Rental",
+            "description": "Reliable flatbed transportation services for steel materials, containers, pipes, industrial equipment, and general cargo."
+          },
+          "lowbed": {
+            "title": "Lowbed Trailer Services",
+            "description": "Specialized lowbed trailer solutions for transporting excavators, cranes, loaders, and oversized heavy machinery safely and efficiently."
+          },
+          "heavyEquipment": {
+            "title": "Heavy Equipment Transportation",
+            "description": "Professional heavy haulage support for construction, oil & gas, manufacturing, and infrastructure sectors."
+          },
+          "crossBorder": {
+            "title": "Cross-Border Logistics",
+            "description": "Integrated GCC transportation and logistics coordination for industrial cargo and project equipment movement."
+          }
+        }
+      },
+      "machineryRental": {
+        "title": "Heavy Machinery Rental Services in Saudi Arabia",
+        "description": "GQS provides flexible heavy machinery rental solutions for construction, industrial, and infrastructure projects. We offer reliable equipment support with daily, weekly, and monthly rental options tailored to project requirements.",
+        "availableEquipmentTitle": "Available Equipment:",
+        "items": [
+          "Excavators",
+          "Cranes",
+          "Forklifts",
+          "Wheel Loaders",
+          "Earthmoving Equipment",
+          "Site Support Machinery"
+        ],
+        "footerNote": "Our machinery rental solutions help clients improve operational efficiency while reducing equipment ownership and maintenance costs."
+      },
+      "hiabBoomTruck": {
+        "title": "Hiab & Boom Truck Rental Services",
+        "description": "We provide professional Hiab and boom truck services for lifting, loading, unloading, and industrial material handling operations across Saudi Arabia.",
+        "idealForTitle": "Our lifting support services are ideal for:",
+        "items": [
+          "Construction Sites",
+          "Fabrication Yards",
+          "Industrial Plants",
+          "Infrastructure Projects",
+          "Equipment Installation Operations"
+        ],
+        "footerNote": "With experienced coordination and reliable operational support, GQS ensures safe and efficient material movement for every project."
+      },
+      "projectLogistics": {
+        "title": "Industrial Project Logistics Support Services",
+        "description": "GQS delivers integrated project logistics solutions designed to support complex industrial and infrastructure operations.",
+        "solutionsTitle": "Our Project Logistics Services Include:",
+        "items": [
+          "Port Cargo Handling",
+          "Equipment Mobilization",
+          "Shutdown Logistics Support",
+          "Route Survey & Planning",
+          "Barge Loading Coordination",
+          "Heavy Transport Planning"
+        ],
+        "footerNote": "We coordinate every stage of project logistics to ensure timely execution, operational efficiency, and smooth cargo movement."
+      },
+      "industries": {
+        "title": "Industries We Serve",
+        "description": "GQS supports multiple industries across Saudi Arabia with reliable transport, machinery rental, and logistics services.",
+        "items": {
+          "oilGas": {
+            "title": "Oil & Gas Industry",
+            "description": "Heavy equipment transportation, shutdown logistics, and industrial project support services."
+          },
+          "construction": {
+            "title": "Construction Industry",
+            "description": "Machinery rental, cargo transportation, and construction equipment mobilization solutions."
+          },
+          "steel": {
+            "title": "Steel & Fabrication Sector",
+            "description": "Industrial cargo handling and factory logistics support services."
+          },
+          "ports": {
+            "title": "Ports & Marine Operations",
+            "description": "Port cargo coordination, barge logistics, and marine support transportation solutions."
+          },
+          "manufacturing": {
+            "title": "Industrial Manufacturing",
+            "description": "Heavy equipment movement and operational logistics support for industrial facilities."
+          },
+          "infrastructure": {
+            "title": "Infrastructure Projects",
+            "description": "Transport and machinery mobilization services for roads, bridges, utilities, and large-scale development projects."
+          }
+        }
+      },
+      "whyChooseUs": {
+        "title": "Why Choose Gulf Quality Structure Establishment",
+        "items": {
+          "solutions": {
+            "title": "Integrated Industrial Support Solutions",
+            "description": "We provide complete transport, lifting, machinery rental, and logistics coordination under one trusted service provider."
+          },
+          "mobilization": {
+            "title": "Fast Operational Mobilization",
+            "description": "Quick response and efficient coordination across major industrial cities in Saudi Arabia."
+          },
+          "network": {
+            "title": "Reliable Supplier & Fleet Network",
+            "description": "Strong equipment and transport network ensuring operational flexibility and availability."
+          },
+          "pricing": {
+            "title": "Competitive Pricing",
+            "description": "Affordable and scalable transport and machinery rental solutions tailored to project needs."
+          },
+          "team": {
+            "title": "Professional Coordination Team",
+            "description": "Dedicated operational support ensuring smooth communication, safety compliance, and timely project execution."
+          }
+        }
+      },
+      "operationalAreas": {
+        "title": "Serving Major Industrial Cities Across Saudi Arabia",
+        "description": "GQS provides heavy transport and machinery rental services across:",
+        "cities": [
+          "Dammam",
+          "Jubail",
+          "Al Khobar",
+          "Riyadh",
+          "Jeddah",
+          "Yanbu",
+          "GCC Cross-Border Routes"
+        ],
+        "footerNote": "We ensure reliable logistics support and equipment mobilization throughout the Kingdom."
+      },
+      "safety": {
+        "title": "Safety & Quality Commitment",
+        "description": "At Gulf Quality Structure Establishment, safety and operational quality are at the core of our services. We follow professional operational standards to ensure safe transportation, reliable equipment handling, and efficient project coordination.",
+        "commitmentsTitle": "Our Commitments:",
+        "items": [
+          "Safe Operational Procedures",
+          "Reliable Transport Coordination",
+          "Timely Project Execution",
+          "Professional Logistics Support",
+          "Customer Satisfaction & Service Excellence"
+        ],
+        "footerNote": "Maintaining the highest safety standards across every project."
+      },
+      "stats": {
+        "clients": "Trusted Clients",
+        "projects": "Projects Completed",
+        "machines": "Fleet Units",
+        "support": "Global Support"
+      },
+      "cta": {
+        "title": "Need Reliable Industrial Support?",
+        "description": "Partner with GQS for dependable transport, lifting, and machinery rental solutions.",
+        "descriptionSecondary": "Cost-effective solutions ready for immediate mobilization.",
+        "contactText": "Contact Us Today For Project Support & Transport Solutions",
+        "primaryCta": "Contact GQS Now"
+      }
+    },
+    "aboutUs": {
+      "index": {
+        "title": "About Us",
+        "description": "Corporate profile, governance, and the teams behind GQS deliveries."
+      },
+      "companyOverview": {
+        "title": "Company Overview",
+        "description": "Learn how Gulf Quality Structures delivers heavy transport and equipment solutions across KSA."
+      },
+      "visionMission": {
+        "title": "Vision & Mission",
+        "description": "Our long-term direction and the commitments that guide every mobilization."
+      },
+      "coreValues": {
+        "title": "Core Values",
+        "description": "Safety, reliability, and partnership embedded in how we operate."
+      },
+      "operationalAreas": {
+        "title": "Operational Areas",
+        "description": "Regions and corridors where GQS supports critical logistics."
+      },
+      "whyChooseUs": {
+        "title": "Why Choose Us",
+        "description": "Mobilization speed, fleet depth, and compliance you can audit with confidence."
+      }
+    },
+    "services": {
+      "index": {
+        "title": "Services",
+        "description": "Heavy transport, machinery rental, Hiab, and project logistics under one program office."
+      },
+      "heavyTransport": {
+        "index": {
+          "title": "Heavy Transport Services",
+          "description": "Lowbed, flatbed, and escorted convoys engineered for KSA corridors."
+        },
+        "flatbedTrailerRental": {
+          "title": "Flatbed Trailer Rental",
+          "description": "Versatile flatbed capacity for standard and oversized deck loads."
+        },
+        "lowbedTrailerRental": {
+          "title": "Lowbed Trailer Rental",
+          "description": "Low deck height for tall and heavy machinery moves."
+        },
+        "heavyCargoTransport": {
+          "title": "Heavy Cargo Transport",
+          "description": "Engineered moves for concentrated weights and critical schedules."
+        },
+        "crossBorderTransport": {
+          "title": "Cross-Border Transport",
+          "description": "Coordinated documentation and escorts for GCC corridor projects."
+        },
+        "industrialLogisticsSupport": {
+          "title": "Industrial Logistics Support",
+          "description": "Staging, consolidation, and site delivery aligned to shutdown windows."
+        }
+      },
+      "heavyMachineryRental": {
+        "index": {
+          "title": "Heavy Machinery Rental",
+          "description": "Rental fleet with maintenance transparency and standby plans."
+        },
+        "excavatorRental": {
+          "title": "Excavator Rental",
+          "description": "Tracked and wheeled excavators for earthworks and plant projects."
+        },
+        "craneRental": {
+          "title": "Crane Rental",
+          "description": "Lift planning with certified operators and rigging supervision."
+        },
+        "wheelLoaderRental": {
+          "title": "Wheel Loader Rental",
+          "description": "Material handling and stockpile support for industrial yards."
+        },
+        "forkliftRental": {
+          "title": "Forklift Rental",
+          "description": "Industrial forklifts for ports, fabrication shops, and warehouses."
+        },
+        "earthmovingEquipment": {
+          "title": "Earthmoving Equipment",
+          "description": "Bulldozers, graders, and complementary fleet for mass earthworks."
+        }
+      },
+      "hiabBoomTruck": {
+        "index": {
+          "title": "Hiab / Boom Truck Services",
+          "description": "Knuckle boom lifts, loading teams, and engineered rigging."
+        },
+        "materialHandling": {
+          "title": "Material Handling",
+          "description": "Knuckle-boom precision for congested sites and tight lifts."
+        },
+        "loadingUnloading": {
+          "title": "Loading & Unloading",
+          "description": "Rapid turnarounds for convoys, laydown yards, and port hand-offs."
+        },
+        "siteInstallationSupport": {
+          "title": "Site Installation Support",
+          "description": "Positioning skids, modules, and packaged equipment with millimetre control."
+        },
+        "industrialLiftingServices": {
+          "title": "Industrial Lifting Services",
+          "description": "Supervised lifts aligned to your method statements and PTW process."
+        }
+      },
+      "projectLogistics": {
+        "index": {
+          "title": "Project Logistics",
+          "description": "Port, marine, and shutdown logistics orchestrated end-to-end."
+        },
+        "portCargoHandling": {
+          "title": "Port Cargo Handling",
+          "description": "Marshalling, lifting, and hand-off coordination inside port limits."
+        },
+        "bargeLoadingSupport": {
+          "title": "Barge Loading Support",
+          "description": "Deck loading plans and marine interface logistics."
+        },
+        "shutdownLogistics": {
+          "title": "Shutdown Logistics",
+          "description": "Time-critical flows for turnarounds and maintenance events."
+        },
+        "equipmentMobilization": {
+          "title": "Equipment Mobilization",
+          "description": "Route studies, permits, and convoy management for heavy rolls."
+        },
+        "routeSurveyPlanning": {
+          "title": "Route Survey & Planning",
+          "description": "LiDAR, swept-path analysis, and civil interface recommendations."
+        }
+      }
+    },
+    "fleetEquipment": {
+      "index": {
+        "title": "Fleet & Equipment",
+        "description": "Trailers, trucks, and yellow-iron availability for immediate mobilization."
+      },
+      "flatbedTrailers": {
+        "title": "Flatbed Trailers",
+        "description": "Payload envelopes, tie-down patterns, and regional availability."
+      },
+      "lowbedTrailers": {
+        "title": "Lowbed Trailers",
+        "description": "Multi-axle configurations for ultra-heavy industrial rolls."
+      },
+      "hiabTrucks": {
+        "title": "Hiab Trucks",
+        "description": "Boom reach classes and operator certifications on file."
+      },
+      "excavators": {
+        "title": "Excavators",
+        "description": "OEM mix, attachment packages, and maintenance windows."
+      },
+      "cranes": {
+        "title": "Cranes",
+        "description": "Chart capacities, counterweight strategies, and lift envelopes."
+      },
+      "wheelLoaders": {
+        "title": "Wheel Loaders",
+        "description": "Bucket families, payload match, and fuel telemetry options."
+      },
+      "forklifts": {
+        "title": "Forklifts",
+        "description": "Industrial ratings, attachment stacks, and service contracts."
+      }
+    },
+    "industries": {
+      "index": {
+        "title": "Industries",
+        "description": "Sector playbooks aligning compliance, fleet, and supervision models."
+      },
+      "oilGas": {
+        "title": "Oil & Gas",
+        "description": "Turnaround transport, module skids, and remote site access."
+      },
+      "construction": {
+        "title": "Construction",
+        "description": "Infrastructure and vertical build logistics across KSA."
+      },
+      "steelFabrication": {
+        "title": "Steel & Fabrication",
+        "description": "Long product, plate, and abnormal indivisible loads."
+      },
+      "portsMarine": {
+        "title": "Ports & Marine",
+        "description": "Quayside mobilizations and coastal project support."
+      },
+      "industrialManufacturing": {
+        "title": "Industrial Manufacturing",
+        "description": "Press lines, turbines, and packaged plant relocations."
+      },
+      "infrastructureProjects": {
+        "title": "Infrastructure Projects",
+        "description": "Girders, bridge segments, and metro equipment convoys."
+      }
+    },
+    "projects": {
+      "index": {
+        "title": "Projects",
+        "description": "Representative deliveries demonstrating controls and transparency."
+      },
+      "heavyEquipmentTransport": {
+        "title": "Heavy Equipment Transport",
+        "description": "Selected moves showcasing engineering controls and schedule fidelity."
+      },
+      "crossBorderLogistics": {
+        "title": "Cross-Border Logistics",
+        "description": "GCC corridor deliveries with documentation transparency."
+      },
+      "industrialCargoMovement": {
+        "title": "Industrial Cargo Movement",
+        "description": "Factory-to-foundation flows for critical components."
+      },
+      "portHandlingProjects": {
+        "title": "Port Handling Projects",
+        "description": "Berth-side lifts and marshalling discipline under marine survey."
+      },
+      "machineryMobilization": {
+        "title": "Machinery Mobilization",
+        "description": "Shutdown and greenfield equipment positioning programs."
+      }
+    },
+    "blog": {
+      "index": {
+        "title": "Blog / Insights",
+        "description": "Articles for operators, procurement teams, and project controls."
+      },
+      "heavyTransportNews": {
+        "title": "Heavy Transport News",
+        "description": "Regulatory updates, corridor notices, and fleet innovations."
+      },
+      "machineryRentalTips": {
+        "title": "Machinery Rental Tips",
+        "description": "Practical guidance for sizing attachments and shift planning."
+      },
+      "logisticsIndustryUpdates": {
+        "title": "Logistics Industry Updates",
+        "description": "Macro trends affecting heavy lift and transport procurement."
+      },
+      "projectLogisticsArticles": {
+        "title": "Project Logistics Articles",
+        "description": "Deep dives on surveys, marine interfaces, and critical path."
+      },
+      "safetyOperations": {
+        "title": "Safety & Operations",
+        "description": "Field lessons, PTW reminders, and incident prevention patterns."
+      }
+    },
+    "careers": {
+      "index": {
+        "title": "Careers",
+        "description": "Join drivers, operators, coordinators, and commercial leaders."
+      },
+      "drivers": {
+        "title": "Drivers",
+        "description": "Articulated, modular, and escort-qualified driving careers."
+      },
+      "operators": {
+        "title": "Operators",
+        "description": "Crane, Hiab, and heavy equipment operator opportunities."
+      },
+      "logisticsCoordinators": {
+        "title": "Logistics Coordinators",
+        "description": "Schedulers and customer liaisons for complex mobilizations."
+      },
+      "salesExecutives": {
+        "title": "Sales Executives",
+        "description": "Account growth for transport, rental, and project logistics."
+      },
+      "applyOnline": {
+        "title": "Apply Online",
+        "description": "Submit credentials and fleet certifications securely."
+      }
+    },
+    "contactUs": {
+      "index": {
+        "title": "Contact Us",
+        "description": "Forms, maps, and messaging channels routed to the right desk."
+      },
+      "inquiryForm": {
+        "title": "Inquiry Form",
+        "description": "Structured questions so we can respond with an executable plan."
+      },
+      "officeLocation": {
+        "title": "Office Location",
+        "description": "Visit coordination and parking guidance for guests."
+      },
+      "whatsappContact": {
+        "title": "WhatsApp Contact",
+        "description": "Rapid messaging for operational updates and media sharing."
+      },
+      "googleMap": {
+        "title": "Google Map",
+        "description": "Directions to our offices and primary marshalling yards."
+      }
+    },
+    "requestAQuote": {
+      "index": {
+        "title": "Request a Quote",
+        "description": "Choose the desk that matches your scope for a faster response."
+      },
+      "transportInquiry": {
+        "title": "Transport Inquiry",
+        "description": "Share routes, dimensions, and schedule to receive pricing."
+      },
+      "machineryRentalInquiry": {
+        "title": "Machinery Rental Inquiry",
+        "description": "Machine class, hours, and mobilization preferences."
+      },
+      "hiabServiceInquiry": {
+        "title": "Hiab Service Inquiry",
+        "description": "Lift radius, rigging, and site access constraints."
+      },
+      "projectLogisticsInquiry": {
+        "title": "Project Logistics Inquiry",
+        "description": "Marine, port, and multi-modal scopes welcome."
+      }
+    }
+  },
+  "common": {
+    "languageLabel": "Language",
+    "languageEnglish": "English",
+    "languageArabic": "Arabic"
+  },
+  "metadata": {
+    "title": "Gulf Quality Structures Establishment",
+    "description": "Heavy transport, machinery rental, and project logistics across KSA."
+  },
+  "notFound": {
+    "title": "We could not find that page",
+    "description": "The link may be outdated or the page may have moved.",
+    "cta": "Back to home"
+  }
+}
