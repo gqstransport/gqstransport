@@ -8,7 +8,7 @@ export async function HomeHero() {
   const t = await getTranslations("pages.home.hero");
 
   return (
-    <section className="relative min-h-[800px] w-full overflow-hidden bg-[var(--color-primary-navy)] flex items-center">
+    <section className="relative min-h-[600px] w-full overflow-hidden bg-[var(--color-primary-navy)] flex items-center">
       {/* Background Image with Enhanced Multi-layer Overlay */}
       <div className="absolute inset-0 z-0">
         <Image
@@ -23,7 +23,7 @@ export async function HomeHero() {
         <div className="absolute inset-0 bg-gradient-to-t from-[var(--color-primary-navy)] via-transparent to-transparent opacity-60" />
       </div>
 
-      <div className="relative z-10 mx-auto max-w-7xl px-4 py-24 sm:px-6 lg:px-8 w-full">
+      <div className="relative z-10 mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8 w-full">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 items-center">
           <div className="lg:col-span-7 space-y-10">
             <StaggerContainer delay={0.2} staggerDelay={0.15}>
@@ -78,12 +78,12 @@ export async function HomeHero() {
               <div className="glass-dark p-10 rounded-sm space-y-8 relative group overflow-hidden">
                 {/* Decorative background element */}
                 <div className="absolute -top-24 -right-24 w-48 h-48 bg-[var(--color-accent-gold)] opacity-5 rounded-full blur-3xl group-hover:opacity-10 transition-opacity" />
-                
+
                 <h3 className="text-[var(--color-accent-gold)] font-bold uppercase tracking-widest text-sm flex items-center gap-3">
                   <span className="h-px w-8 bg-[var(--color-accent-gold)]/50" />
                   {t("trustedPartner")}
                 </h3>
-                
+
                 <ul className="space-y-6">
                   {(t.raw("features") as string[]).map((feature, idx) => (
                     <li key={idx} className="flex items-start gap-4 group/item">
@@ -94,7 +94,7 @@ export async function HomeHero() {
                     </li>
                   ))}
                 </ul>
-                
+
                 <div className="pt-6 border-t border-white/10">
                   <p className="text-white/40 text-xs uppercase tracking-widest font-bold">
                     {t("servingCities")}

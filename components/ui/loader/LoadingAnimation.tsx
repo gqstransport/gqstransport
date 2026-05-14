@@ -135,13 +135,13 @@ const LoadingAnimation: React.FC = () => {
 
       <div className="milPreloaderAnimation relative z-10">
         <div className="milPosAbs milAnimation1">
-          <p className="milH3 font-heading font-bold" id="color-mil-txt">
+          <p className="milH3 font-heading font-bold color-mil-txt">
             Trusted
           </p>
-          <p className="milH3 font-heading font-bold" id="color-mil-txt" style={{ color: 'var(--color-accent-gold)' }}>
+          <p className="milH3 font-heading font-bold color-mil-txt" style={{ color: 'var(--color-accent-gold)' }}>
             Industrial Logistics
           </p>
-          <p className="milH3 font-heading font-bold" id="color-mil-txt">
+          <p className="milH3 font-heading font-bold color-mil-txt">
             Experts
           </p>
         </div>

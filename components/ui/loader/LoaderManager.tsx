@@ -2,7 +2,7 @@
 
 import { usePathname } from 'next/navigation';
 import { useEffect, useState } from 'react';
-import SimplePrepcoLoader from '../SimplePreLoader';
+import SimplePageLoader from './SimplePageLoader';
 
 export default function LoaderManager({ children }: { children: React.ReactNode }) {
   const pathname = usePathname();
@@ -21,7 +21,7 @@ export default function LoaderManager({ children }: { children: React.ReactNode 
   return (
     <>
       {/* Show loader only during navigation */}
-      {isLoading && <SimplePrepcoLoader />}
+      {isLoading && <SimplePageLoader />}
 
       {/* Render main content once loading is complete */}
       {!isLoading && children}

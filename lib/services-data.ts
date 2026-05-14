@@ -2,9 +2,9 @@ export type ServiceSubpage = {
   slug: string;
   title: string;
   description: string;
-  overview: string;
-  applications: string[];
-  features: string[];
+  overview?: string;
+  applications?: string[];
+  features?: string[];
   fleetDetails?: {
     types?: string[];
     capacity?: string;

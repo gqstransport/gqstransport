@@ -56,17 +56,7 @@ export const HEADER_NAV_ENTRIES: HeaderNavEntry[] = [
       { href: "/services/industrial-support-services", group: "services", key: "industrialSupportServices" },
     ],
   },
-  {
-    kind: "dropdown",
-    navKey: "resources",
-    indexHref: "/blog",
-    children: [
-      { href: "/blog", group: "resources", key: "blog" },
-      { href: "/fleet-equipment", group: "resources", key: "fleet" },
-      { href: "/industries", group: "resources", key: "industries" },
-      { href: "/projects", group: "resources", key: "projects" },
-
-    ],
-  },
+  { kind: "link", href: "/blog", navKey: "blog" },
+  { kind: "link", href: "/projects", navKey: "projects" },
   { kind: "link", href: "/contact-us", navKey: "contactUs" },
 ];

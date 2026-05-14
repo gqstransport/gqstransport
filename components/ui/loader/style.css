@@ -28,21 +28,21 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    gap: 20px;
 }
 
 .milPosAbs p {
     opacity: 0;
-    margin-right: 15px;
 }
 
 @media screen and (max-width: 992px) {
     .milPosAbs {
         flex-direction: column;
+        gap: 10px;
     }
 
     .milPosAbs p {
         margin-right: 0;
-        margin-bottom: 10px;
     }
 }
 
@@ -63,9 +63,10 @@
     pointer-events: none;
 }
 
-#color-mil-txt {
+.color-mil-txt {
     color: white;
-    font-size: 3rem;
+    font-size: 3.5rem;
+    line-height: 1.1;
 }
 
 .minWebHeader {

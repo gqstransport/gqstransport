@@ -66,7 +66,7 @@ export function ServiceDetailPage({ service, category }: Props) {
                   <h2 className="text-3xl font-bold md:text-4xl mb-6">Service Overview</h2>
                   <div className="h-1 w-20 bg-[var(--color-accent-gold)] mb-8" />
                   <p className="text-xl leading-relaxed">
-                    {service.overview}
+                    {service.overview || service.description}
                   </p>
                 </div>
               </Reveal>

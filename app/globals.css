@@ -26,6 +26,8 @@
   --color-primary: var(--color-primary-navy);
   --color-accent: var(--color-accent-gold);
   --color-border: var(--color-border);
+  --color-muted: var(--color-muted);
+  --color-surface-soft: var(--color-surface-soft);
 }
 
 @layer utilities {

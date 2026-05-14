@@ -16,7 +16,7 @@ const LoaderController: React.FC = () => {
   }, [pathname, setIsPageLoading])
 
   // Normalize pathname to check for home page
-  const isHomePage = pathname === '/' || pathname === '/en' || pathname === '/ta'
+  const isHomePage = pathname === '/' || pathname === '/en' || pathname === '/ar'
 
   if (isHomePage) {
     return <LoadingAnimation key={pathname} />
