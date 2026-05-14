@@ -51,8 +51,9 @@ export const HEADER_NAV_ENTRIES: HeaderNavEntry[] = [
     children: [
       { href: "/services/heavy-transport", group: "services", key: "heavyTransport" },
       { href: "/services/heavy-machinery-rental", group: "services", key: "heavyMachineryRental" },
-      { href: "/services/hiab-boom-truck", group: "services", key: "hiabBoomTruck" },
-      { href: "/services/project-logistics", group: "services", key: "projectLogistics" },
+      { href: "/services/hiab-boom-truck-services", group: "services", key: "hiabBoomTruck" },
+      { href: "/services/project-logistics-support", group: "services", key: "projectLogistics" },
+      { href: "/services/industrial-support-services", group: "services", key: "industrialSupportServices" },
     ],
   },
   {
@@ -64,7 +65,7 @@ export const HEADER_NAV_ENTRIES: HeaderNavEntry[] = [
       { href: "/fleet-equipment", group: "resources", key: "fleet" },
       { href: "/industries", group: "resources", key: "industries" },
       { href: "/projects", group: "resources", key: "projects" },
-      { href: "/careers", group: "resources", key: "careers" },
+
     ],
   },
   { kind: "link", href: "/contact-us", navKey: "contactUs" },

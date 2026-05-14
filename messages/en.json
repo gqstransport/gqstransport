@@ -32,7 +32,8 @@
       "heavyTransport": "Heavy transport services",
       "heavyMachineryRental": "Heavy machinery rental",
       "hiabBoomTruck": "Hiab / boom truck",
-      "projectLogistics": "Project logistics"
+      "projectLogistics": "Project logistics",
+      "industrialSupportServices": "Industrial support services"
     },
     "fleet": {
       "flatbedTrailers": "Flatbed trailers",
@@ -61,9 +62,7 @@
     "resources": {
       "blog": "Blog & Insights",
       "fleet": "Fleet & Equipment",
-      "industries": "Industries Supported",
-      "projects": "Project Gallery",
-      "careers": "Careers"
+      "projects": "Project Gallery"
     },
     "viewAll": "View all"
   },
@@ -304,10 +303,22 @@
         "title": "Regional Coverage",
         "description": "Extensive logistical reach across the Kingdom's industrial corridors.",
         "regions": [
-          { "name": "Eastern Region", "cities": "Dammam, Jubail, Khobar" },
-          { "name": "Central Region", "cities": "Riyadh & Surrounding Areas" },
-          { "name": "Western Region", "cities": "Jeddah, Yanbu, Rabigh" },
-          { "name": "GCC Routes", "cities": "UAE, Kuwait, Qatar, Bahrain, Oman" }
+          {
+            "name": "Eastern Region",
+            "cities": "Dammam, Jubail, Khobar"
+          },
+          {
+            "name": "Central Region",
+            "cities": "Riyadh & Surrounding Areas"
+          },
+          {
+            "name": "Western Region",
+            "cities": "Jeddah, Yanbu, Rabigh"
+          },
+          {
+            "name": "GCC Routes",
+            "cities": "UAE, Kuwait, Qatar, Bahrain, Oman"
+          }
         ]
       },
       "whyChooseUs": {
@@ -334,9 +345,18 @@
         "title": "Operational Strengths",
         "description": "Leveraging a robust fleet and expert coordination to deliver results.",
         "items": [
-          { "title": "Fleet Capacity", "value": "100+ Units" },
-          { "title": "Mobilization", "value": "Fast Response" },
-          { "title": "Experience", "value": "15+ Years" }
+          {
+            "title": "Fleet Capacity",
+            "value": "100+ Units"
+          },
+          {
+            "title": "Mobilization",
+            "value": "Fast Response"
+          },
+          {
+            "title": "Experience",
+            "value": "15+ Years"
+          }
         ]
       },
       "certifications": {

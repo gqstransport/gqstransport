@@ -7,69 +7,174 @@ export interface BlogPost {
   author: string;
   category: string;
   image: string;
+  readingTime: string;
+  tags: string[];
 }
 
 export const MOCK_BLOG_POSTS: BlogPost[] = [
   {
     slug: "heavy-transport-safety-saudi-arabia",
-    title: "Safety First: Heavy Transport Protocols in KSA",
-    excerpt: "Exploring the critical safety measures and regulatory requirements for heavy cargo transportation across the Kingdom.",
+    title: "Safety Protocols for Heavy Industrial Transport in KSA",
+    excerpt: "Discover the critical safety measures, engineering surveys, and regulatory requirements required to navigate heavy cargo logistics without friction.",
     content: `
-      <p>Transportation of heavy and oversized cargo in Saudi Arabia requires more than just powerful engines. It requires a meticulous commitment to safety, engineering, and regional regulations. At GQS, we've refined our protocols over 15 years to ensure every delivery is incident-free.</p>
-      
-      <h2>Engineering Excellence in Logistics</h2>
-      <p>Before a single unit moves, our team conducts exhaustive route surveys. We analyze bridge capacities, overhead clearances, and road conditions to identify potential bottlenecks. Engineering a safe route is the foundation of industrial logistics. This involves calculating load distributions and ensuring that the selected fleet is perfectly suited for the terrain.</p>
-      
-      <h2>Coordinated Escort & Safety Teams</h2>
-      <p>Large-scale movements require coordination with local authorities and pilot vehicles. Our escort teams manage traffic flow and ensure the safety of other road users while protecting the integrity of the cargo. We utilize state-of-the-art communication systems to maintain real-time contact between the driver, escort, and our operations center.</p>
-      
-      <h2>Rigorous Equipment Maintenance</h2>
-      <p>Our fleet undergoes rigorous daily inspections. From tire pressure to hydraulic systems on our lowbed trailers, everything must be in peak condition before mobilization. Preventive maintenance is not just a policy; it's our guarantee of reliability for our clients.</p>
-      
-      <p>By adhering to these strict protocols, we not only protect our team and assets but also ensure that our clients' projects stay on schedule, no matter the scale of the transportation challenge.</p>
+# Safety First: A Strategic Guide to Heavy Transport in Saudi Arabia
+
+Transportation of heavy and oversized cargo in the Kingdom is not merely a matter of equipment; it is a period of intense coordination and engineering precision. In an environment where the "Logistics Chain" is the backbone of industrial vision, safety is the single biggest factor in operational success.
+
+## The Foundation: Technical Engineering Surveys
+
+The most significant factor in logistical delays is inadequate route planning. When route surveys are conducted with engineering rigor, the transportation becomes a simple execution of a pre-verified plan rather than a series of reactive decisions on the road.
+
+1. **Route Feasibility Analysis**: Exhaustive surveys of bridge capacities, overhead clearances, and gradient limits.
+2. **Load Distribution Engineering**: Calculating the exact axle pressure to ensure compliance with Ministry of Transport (MOT) regulations.
+3. **Infrastructure Protection**: Identifying and planning for the temporary removal of obstacles or reinforcement of roads.
+
+## The "Mobilization Ready" Checklist
+
+Before any heavy unit moves, ensure you have the following "Core Four" safety pillars ready:
+
+### 1. The Method Statement
+Provide a detailed technical document outlining every phase of the move, from loading and lashing to transit and offloading at the site.
+
+### 2. Statutory Permits
+Each region in the Kingdom requires specific oversized cargo permits. Ensure all MOT and local authority documentation is centralized and valid for the entire transit window.
+
+### 3. Escort & Pilot Coordination
+For cargo exceeding standard dimensions, coordinated pilot vehicles are mandatory. These teams manage traffic flow and provide the frontline defense for other road users.
+
+### 4. Equipment Readiness Report
+A final inspection of hydraulic systems, tire integrity, and braking mechanisms. Reliability is the result of disciplined maintenance, not luck.
+
+## Leveraging Technology in Logistics
+
+Modern logistics platforms allow for real-time tracking and telemetry. Instead of relying on manual check-ins, GQS utilizes integrated systems to provide:
+
+* **Real-time Telemetry**: Monitoring speed, incline, and engine health across desert routes.
+* **Geofenced Alerts**: Instant notifications if the convoy deviates from the pre-approved route.
+* **Unified Communication**: A single source of truth connecting drivers, escort teams, and our central operations room.
+
+## Conclusion
+
+A seamless heavy transport operation is the result of months of disciplined organization, not 24 hours of intense mobilization. By treating safety and engineering as a continuous system rather than a final hurdle, we ensure that the Kingdom's most vital industrial projects stay on track.
+
+---
+*Ready to secure your next heavy move? [Consult with GQS Experts](/) and build the foundation your project deserves.*
     `,
-    date: "May 12, 2024",
+    date: "2024-05-12",
     author: "Eng. Ahmed Khalid",
     category: "Safety",
-    image: "/blog-1.png"
+    image: "/blog-1.png",
+    readingTime: "8 min read",
+    tags: ["Safety", "Protocols", "KSA"]
   },
   {
     slug: "choosing-right-excavator-rental",
-    title: "How to Choose the Right Excavator for Your Site",
-    excerpt: "A technical guide to selecting the appropriate machinery for construction and excavation projects in the Eastern Province.",
+    title: "Technical Guide: Selecting the Right Excavator for Your Site",
+    excerpt: "A comprehensive technical guide to ensuring your machinery infrastructure is ready to scale your construction operations.",
     content: `
-      <p>Selecting the wrong excavator can lead to significant project delays and increased costs. Understanding the technical requirements of your site is crucial for making the right rental decision. Whether you are working on a small residential site or a massive industrial plant, the choice of machinery defines your efficiency.</p>
-      
-      <h2>Analyzing Dig Depth & Reach</h2>
-      <p>Start by calculating the maximum depth you need to reach. Renting a machine with more capacity than needed is inefficient, but falling short is a major blocker. You must also consider the "reach" – how far the arm can extend to dump material into trucks or over obstacles.</p>
-      
-      <h2>Matching Bucket Capacity to Material</h2>
-      <p>Consider the material you are handling. Dense clay requires different power levels compared to loose sand. Our team can help you calculate the exact tonnage required for your specific earth-moving tasks. Using the wrong bucket size can either slow down the process or put unnecessary strain on the machine's hydraulics.</p>
-      
-      <h2>Terrain & Mobility Considerations</h2>
-      <p>Will you be working on soft sand or stable asphalt? Tracked excavators provide superior stability on loose ground, while wheeled versions offer faster mobility between points on a large, paved site. Understanding your terrain is the third pillar of smart machinery rental.</p>
+# Excavator Selection: A Strategic Site Infrastructure Guide
+
+Selecting the wrong excavator for an industrial site is a necessity often overlooked until Growth outpaces Infrastructure. Many projects find themselves overwhelmed by delays not because of the team, but because the machinery defines the limits of their efficiency.
+
+## The Foundation: Site Condition Analysis
+
+The single biggest factor in site delays is "capacity mismatch." When equipment is matched correctly to the terrain, the excavation becomes a simple verification of the project plan rather than a struggle against the environment.
+
+1. **Terrain Classification**: Are you working on soft sand, compacted clay, or stabilized industrial soil?
+2. **Volumetric Requirements**: Calculating the total tonnage to be moved against the bucket capacity and cycle time.
+3. **Accessibility Limits**: Analyzing the site footprint for swing radius and mobilization clearance.
+
+## The "Site Ready" Checklist
+
+Before your machinery arrives, ensure you have analyzed the following "Core Four" metrics:
+
+### 1. Dig Depth & Reach
+Provide the exact depth requirements. Renting a machine with more capacity than needed is an inefficiency; falling short is a project blocker.
+
+### 2. Undercarriage Suitability
+The choice between crawler (tracked) and wheeled excavators is the foundation of mobility. Tracked units offer superior stability on loose GCC terrain, while wheeled versions provide the speed required for large, paved industrial complexes.
+
+### 3. Attachment Compatibility
+Whether you need hydraulic breakers for rock-heavy ground or trenching buckets for utilities, ensure the machine's hydraulic flow is matched to the specific attachment.
+
+### 4. Operator Efficiency
+Modern machinery is only as effective as the coordination behind it. Ensure your operators are briefed on the specific site safety protocols and load targets.
+
+## Leveraging Modern Fleet Features
+
+Modern excavators like those in the GQS fleet allow you to monitor site health through data. Instead of manual site logs, you gain access to:
+
+* **Fuel Efficiency Analytics**: Tracking consumption to optimize project costs.
+* **Hour Meter Monitoring**: Automated alerts for preventive maintenance to avoid site downtime.
+* **GPS Leveling Systems**: Ensuring precision excavation to avoid rework and material waste.
+
+## Conclusion
+
+Scaling site operations without the right structure is like building a skyscraper on a wooden foundation. GQS exists to provide that steel-frame infrastructure—bringing the right machinery and technical support together into one unified solution.
+
+---
+*Ready to scale your site operations? [Get started with GQS Machinery](/) and build the foundation your project deserves.*
     `,
-    date: "April 28, 2024",
+    date: "2024-04-28",
     author: "Logistics Team",
     category: "Machinery",
-    image: "/blog-2.png"
+    image: "/blog-2.png",
+    readingTime: "6 min read",
+    tags: ["Machinery", "Rental", "Eastern Province"]
   },
   {
     slug: "cross-border-logistics-gcc",
-    title: "Navigating GCC Cross-Border Logistics",
-    excerpt: "Insights into the challenges and solutions for transporting industrial cargo between Saudi Arabia, UAE, and Oman.",
+    title: "The Ultimate Checklist for GCC Cross-Border Logistics",
+    excerpt: "Discover the exact documents, workflows, and timelines required to navigate cross-border cargo transport without friction.",
     content: `
-      <p>The GCC region is a booming hub for industrial growth. However, moving heavy cargo across borders involves complex customs and permit systems. Here's how we simplify the process for our international partners.</p>
-      
-      <h2>Unified Customs & Documentation</h2>
-      <p>Leveraging unified GCC protocols allows for faster processing, but documentation must be perfect. We handle all paperwork, including SASO certifications and industrial permits, to ensure your project stays on schedule. Any error in documentation can lead to days of delays at the border.</p>
-      
-      <h2>Inter-State Regulatory Compliance</h2>
-      <p>Each country within the GCC has its own specific axle-load limits and daytime transport restrictions. Our team stays updated on these changing regulations so you don't have to. We plan the entire journey, ensuring compliance at every kilometer of the route.</p>
+# Cross-Border Logistics: A Strategic GCC Infrastructure Checklist
+
+Moving heavy industrial cargo across borders in the GCC doesn't have to be a period of disruption. While many businesses meet customs with dread, the friction is usually the result of administrative chaos, not regulatory impossibility.
+
+## The Foundation: Regulatory Record Keeping
+
+The single biggest factor in border delays is "catch-up" documentation. When permits and certifications are maintained in real-time, the border crossing becomes a simple verification of existing data rather than a forensic reconstruction of the shipment's origin.
+
+1. **SASO Compliance**: Ensure all products and equipment meet Saudi Standards, Metrology and Quality Organization requirements.
+2. **Customs Valuation**: Maintain clear, documented trails for cargo value and origin to avoid valuation disputes.
+3. **Unified GCC Protocols**: Leverage existing inter-state agreements to speed up the transit of industrial equipment.
+
+## The "Border Ready" Checklist
+
+Before your convoy reaches the frontier, ensure you have the following "Core Four" ready:
+
+### 1. The Commercial Invoice & Packing List
+Provide a final document set that matches the physical cargo exactly. Any discrepancies in weight or dimensions are the primary cause of customs delays.
+
+### 2. Special Permits (OOG)
+For Out-of-Gauge (OOG) cargo, ensure that the transit permits for the destination country (e.g., UAE or Oman) are centralized and match the KSA export permits.
+
+### 3. Industrial Duty Exemptions
+If your project qualifies for industrial duty exemptions, have the original ministerial approvals and proof of project participation organized in a single digital vault.
+
+### 4. Route Permits (Transit)
+Auditors and customs officials in transit countries will need to see your cross-border transit permits. Ensure these are up-to-date and correctly translated where necessary.
+
+## Leveraging Technology in GCC Logistics
+
+Modern platforms like GQS allow you to track your cross-border cargo with precision. Instead of hundreds of status-check calls, you gain access to:
+
+* **Direct Border Visibility**: Real-time status updates as cargo clears each customs checkpoint.
+* **Structured Document Vault**: One single source of truth for all SASO and customs paperwork.
+* **Unified Communication**: Move away from fragmented emails and connect your advisors and logistics team in one structured environment.
+
+## Conclusion
+
+A seamless cross-border move is the result of weeks of disciplined organization, not 48 hours of intense preparation at the border. By treating compliance as a continuous system rather than an annual event, you gain deeper, clearer insights into your regional logistics health.
+
+---
+*Ready to streamline your next regional move? [Consult GQS Logistics](/) and build the foundation your project deserves.*
     `,
-    date: "March 15, 2024",
+    date: "2024-03-15",
     author: "Operations Manager",
     category: "Logistics",
-    image: "/blog-3.png"
+    image: "/blog-3.png",
+    readingTime: "10 min read",
+    tags: ["Logistics", "GCC", "Cross-Border"]
   }
 ];

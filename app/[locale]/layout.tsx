@@ -6,6 +6,10 @@ import { notFound } from "next/navigation";
 import { AppHeader } from "@/components/common/AppHeader";
 import { AppFooter } from "@/components/common/AppFooter";
 import { routing } from "@/i18n/routing";
+import { GlobalContextProvider } from "@/hooks/GlobalContext/GlobalContext";
+import LoaderController from "@/components/ui/loader/LoaderController";
+import { WhatsAppChat } from "@/components/common/WhatsAppChat";
+import { ScrollToTop } from "@/components/common/ScrollToTop";
 
 const outfit = Outfit({
   subsets: ["latin"],
@@ -68,11 +72,16 @@ export default async function LocaleLayout({ children, params }: Props) {
       <body
         className={`${fontVariables} min-h-dvh bg-[var(--color-surface-soft)] text-[var(--color-text-primary)] antialiased`}
       >
-        <NextIntlClientProvider messages={messages}>
-          <AppHeader />
-          <div className="flex min-h-dvh flex-col">{children}</div>
-          <AppFooter />
-        </NextIntlClientProvider>
+        <GlobalContextProvider>
+          <LoaderController />
+          <NextIntlClientProvider messages={messages}>
+            <AppHeader />
+            <div className="flex min-h-dvh flex-col">{children}</div>
+            <AppFooter />
+            <WhatsAppChat />
+            <ScrollToTop />
+          </NextIntlClientProvider>
+        </GlobalContextProvider>
       </body>
     </html>
   );

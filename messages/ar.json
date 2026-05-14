@@ -32,7 +32,8 @@
       "heavyTransport": "خدمات النقل الثقيل",
       "heavyMachineryRental": "تأجير المعدات الثقيلة",
       "hiabBoomTruck": "الهايب / الشاحنات الذراعية",
-      "projectLogistics": "لوجستيات المشاريع"
+      "projectLogistics": "لوجستيات المشاريع",
+      "industrialSupportServices": "خدمات الدعم الصناعي"
     },
     "fleet": {
       "flatbedTrailers": "مقطورات مسطحة",

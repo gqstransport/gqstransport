@@ -5,6 +5,7 @@ import { ChevronDown, Menu, X } from "lucide-react";
 import { Link, usePathname } from "@/i18n/navigation";
 import { cn } from "@/lib/cn";
 import type { ResolvedNavDropdown, ResolvedNavSection } from "@/lib/header-nav-config";
+import Image from "next/image";
 
 type BrandCopy = {
   short: string;
@@ -229,12 +230,15 @@ export function AppHeaderNav({ sections, quoteLabel, brand, menuOpenLabel, menuC
           )}
         >
           <div className="flex items-start justify-between gap-4 border-b border-black/5 px-5 py-5">
-            <Link href="/" className="min-w-0 text-start" onClick={() => setMobileOpen(false)}>
-              <span className="font-heading text-2xl font-bold tracking-tight text-[var(--color-primary-navy)]">{brand.short}</span>
-              <span className="mt-1 block text-[11px] font-semibold uppercase leading-snug tracking-wide text-[var(--color-text-muted)]">
-                {brand.name}
-              </span>
-              <span className="mt-0.5 block text-[10px] font-medium uppercase tracking-wider text-[var(--color-accent-gold)]">{brand.tagline}</span>
+            <Link href="/" className="min-w-0 text-start group" onClick={() => setMobileOpen(false)}>
+              <div className="relative h-12 w-40 transition-transform group-hover:scale-105">
+                <Image 
+                  src="/assets/images/logo.png" 
+                  alt="GQS Logo" 
+                  fill 
+                  className="object-contain" 
+                />
+              </div>
             </Link>
             <button
               type="button"

@@ -5,6 +5,7 @@ import { AppHeaderNav } from "@/components/common/AppHeaderNav";
 import { LanguageSwitcher } from "@/components/common/LanguageSwitcher";
 import { HEADER_NAV_ENTRIES } from "@/lib/header-nav-config";
 import type { ResolvedNavSection } from "@/lib/header-nav-config";
+import Image from "next/image";
 
 export async function AppHeader() {
   const t = await getTranslations("nav");
@@ -62,22 +63,16 @@ export async function AppHeader() {
 
       <div className="border-b border-black/[0.06] bg-[var(--color-surface-card)] shadow-[0_1px_0_rgba(12,31,60,0.04)]">
         <div className="mx-auto flex max-w-7xl items-center gap-4 px-4 py-3.5 sm:gap-6 sm:px-6 sm:py-4 lg:px-8">
-          <Link href="/" className="group flex min-w-0 max-w-[min(100%,16rem)] shrink-0 items-start gap-3 sm:max-w-md lg:max-w-lg">
-            <span
-              className="mt-0.5 hidden h-12 w-1 shrink-0 rounded-full bg-[var(--color-accent-gold)] shadow-[0_0_12px_rgba(226,184,68,0.35)] sm:block"
-              aria-hidden
-            />
-            <span className="min-w-0 border-s-[3px] border-[var(--color-accent-gold)] ps-3 sm:border-s-0 sm:ps-0">
-              <span className="font-heading text-2xl font-bold tracking-tight text-[var(--color-primary-navy)] transition group-hover:text-[var(--color-secondary-blue)] sm:text-[1.65rem]">
-                {th("companyShort")}
-              </span>
-              <span className="mt-0.5 block text-[11px] font-semibold uppercase leading-snug tracking-wide text-[var(--color-secondary-blue)] sm:text-xs">
-                {th("companyName")}
-              </span>
-              <span className="mt-1 block text-[10px] font-medium uppercase tracking-[0.2em] text-[var(--color-accent-gold)]">
-                {th("tagline")}
-              </span>
-            </span>
+          <Link href="/" className="group flex shrink-0 items-center gap-3">
+            <div className="relative h-14 w-40 sm:h-16 sm:w-48 transition-transform group-hover:scale-105">
+              <Image 
+                src="/assets/images/logo.png" 
+                alt="GQS Logo" 
+                fill 
+                className="object-contain"
+                priority
+              />
+            </div>
           </Link>
 
           <AppHeaderNav

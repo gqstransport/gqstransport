@@ -1,109 +1,190 @@
-import { MOCK_BLOG_POSTS } from "@/lib/mock-blog-data";
+"use client";
+
+import React, { useState, useMemo } from "react";
+import { MOCK_BLOG_POSTS, BlogPost } from "@/lib/mock-blog-data";
 import Image from "next/image";
 import { Link } from "@/i18n/navigation";
-import { Calendar, User, ArrowRight } from "lucide-react";
-import { Reveal, StaggerContainer, StaggerItem } from "@/components/ui/motion-reveal";
+import { Calendar, Clock, Search, Filter, ArrowUpRight, User } from "lucide-react";
+import { motion, AnimatePresence } from "framer-motion";
+import { cn } from "@/lib/cn";
 
 export function BlogList() {
-  const [featured, ...others] = MOCK_BLOG_POSTS;
+  const [searchTerm, setSearchTerm] = useState("");
+  const [selectedCategory, setSelectedCategory] = useState("");
+
+  const categories = useMemo(() => {
+    return Array.from(new Set(MOCK_BLOG_POSTS.map((post) => post.category))).sort();
+  }, []);
+
+  const filteredPosts = useMemo(() => {
+    return MOCK_BLOG_POSTS.filter((post) => {
+      const matchesSearch =
+        post.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
+        post.excerpt.toLowerCase().includes(searchTerm.toLowerCase());
+      const matchesCategory = !selectedCategory || post.category === selectedCategory;
+      return matchesSearch && matchesCategory;
+    });
+  }, [searchTerm, selectedCategory]);
 
   return (
     <section className="bg-white py-24 lg:py-32">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        {/* Featured Post */}
-        {featured && (
-          <Reveal direction="up">
-            <Link href={`/blog/${featured.slug}`} className="group relative block mb-20 overflow-hidden rounded-sm bg-[var(--color-primary-navy)] shadow-2xl">
-              <div className="grid grid-cols-1 lg:grid-cols-12">
-                <div className="lg:col-span-7 relative aspect-[16/10] lg:aspect-auto h-[400px] lg:h-[600px] overflow-hidden">
-                  <Image 
-                    src={featured.image} 
-                    alt={featured.title} 
-                    fill 
-                    className="object-cover transition-transform duration-1000 group-hover:scale-105"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-r from-[var(--color-primary-navy)] to-transparent opacity-60 lg:opacity-100" />
-                  <div className="absolute top-0 left-0 w-full h-1 gradient-line" />
-                </div>
-                <div className="lg:col-span-5 p-8 lg:p-16 flex flex-col justify-center space-y-6 relative z-10">
-                  <span className="inline-block px-4 py-1.5 rounded-sm bg-[var(--color-accent-gold)] text-[var(--color-primary-navy)] text-[10px] font-black uppercase tracking-widest">
-                    Featured Insight
-                  </span>
-                  <h2 className="text-3xl lg:text-5xl font-black text-white uppercase tracking-tight leading-tight">
-                    {featured.title}
-                  </h2>
-                  <p className="text-white/60 text-lg font-medium leading-relaxed">
-                    {featured.excerpt}
-                  </p>
-                  <div className="flex items-center gap-6 pt-4 text-white/40 text-xs font-bold uppercase tracking-widest border-t border-white/5">
-                    <div className="flex items-center gap-2"><Calendar className="h-4 w-4" /> {featured.date}</div>
-                    <div className="flex items-center gap-2"><User className="h-4 w-4" /> {featured.author}</div>
-                  </div>
-                  <div className="pt-8">
-                    <span className="inline-flex items-center gap-3 text-[var(--color-accent-gold)] font-black uppercase tracking-widest text-xs group-hover:translate-x-2 transition-transform duration-500">
-                      Read Full Article <ArrowRight className="h-4 w-4" />
-                    </span>
-                  </div>
+
+        {/* Search and Filter Section */}
+        <div className="mb-20">
+          <div className="bg-[var(--color-surface-soft)] rounded-sm p-6 lg:p-8 border border-black/5 shadow-xl">
+            <div className="flex flex-col md:flex-row gap-6">
+              <div className="flex-1 relative">
+                <Search className="absolute left-4 top-1/2 -translate-y-1/2 h-5 w-5 text-gray-400" />
+                <input
+                  type="text"
+                  placeholder="Search articles, insights, or updates..."
+                  value={searchTerm}
+                  onChange={(e) => setSearchTerm(e.target.value)}
+                  className="w-full pl-12 pr-4 py-4 bg-white border border-black/5 rounded-sm focus:outline-none focus:border-[var(--color-accent-gold)] transition-colors text-sm font-medium"
+                />
+              </div>
+              <div className="w-full md:w-64 relative">
+                <Filter className="absolute left-4 top-1/2 -translate-y-1/2 h-5 w-5 text-gray-400" />
+                <select
+                  value={selectedCategory}
+                  onChange={(e) => setSelectedCategory(e.target.value)}
+                  className="w-full pl-12 pr-10 py-4 bg-white border border-black/5 rounded-sm focus:outline-none focus:border-[var(--color-accent-gold)] appearance-none transition-colors text-sm font-medium"
+                >
+                  <option value="">All Categories</option>
+                  {categories.map((cat) => (
+                    <option key={cat} value={cat}>{cat}</option>
+                  ))}
+                </select>
+                <div className="absolute right-4 top-1/2 -translate-y-1/2 pointer-events-none text-gray-400">
+                  <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                  </svg>
                 </div>
               </div>
-            </Link>
-          </Reveal>
-        )}
+            </div>
 
-        {/* List Grid */}
-        <StaggerContainer staggerDelay={0.1}>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-10">
-            {others.map((post) => (
-              <StaggerItem key={post.slug}>
-                <Link 
-                  href={`/blog/${post.slug}`} 
-                  className="group flex flex-col h-full bg-white rounded-sm border border-gray-100 overflow-hidden shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-500"
+            {(searchTerm || selectedCategory) && (
+              <div className="mt-6 flex flex-wrap items-center gap-3">
+                <span className="text-[10px] font-black uppercase tracking-widest text-gray-400">Active Filters:</span>
+                {searchTerm && (
+                  <span className="px-3 py-1 bg-[var(--color-accent-gold)]/10 text-[var(--color-primary-navy)] text-[10px] font-bold rounded-sm border border-[var(--color-accent-gold)]/20">
+                    "{searchTerm}"
+                  </span>
+                )}
+                {selectedCategory && (
+                  <span className="px-3 py-1 bg-[var(--color-accent-gold)]/10 text-[var(--color-primary-navy)] text-[10px] font-bold rounded-sm border border-[var(--color-accent-gold)]/20">
+                    {selectedCategory}
+                  </span>
+                )}
+                <button
+                  onClick={() => {
+                    setSearchTerm("");
+                    setSelectedCategory("");
+                  }}
+                  className="text-[10px] font-black uppercase tracking-widest text-red-500 hover:text-red-600 transition-colors ml-2"
                 >
-                  {/* Image Container */}
-                  <div className="relative aspect-[16/10] overflow-hidden">
-                    <Image 
-                      src={post.image} 
-                      alt={post.title} 
-                      fill 
-                      className="object-cover transition-transform duration-1000 group-hover:scale-110"
-                    />
-                    <div className="absolute top-4 left-4">
-                      <span className="px-3 py-1 rounded-sm bg-[var(--color-primary-navy)] text-white text-[9px] font-black uppercase tracking-widest shadow-lg">
-                        {post.category}
-                      </span>
-                    </div>
-                  </div>
+                  Clear All
+                </button>
+              </div>
+            )}
+          </div>
+        </div>
 
-                  {/* Content Container */}
-                  <div className="flex-1 p-8 flex flex-col">
-                    <div className="flex items-center gap-3 text-[10px] font-bold text-gray-400 uppercase tracking-widest mb-4">
-                       <Calendar className="h-3 w-3 text-[var(--color-accent-gold)]" /> 
-                       {post.date}
+        {/* Results Grid */}
+        <AnimatePresence mode="popLayout">
+          {filteredPosts.length > 0 ? (
+            <motion.div
+              layout
+              className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-12"
+            >
+              {filteredPosts.map((post) => (
+                <motion.article
+                  layout
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  exit={{ opacity: 0, scale: 0.95 }}
+                  key={post.slug}
+                  className="group flex flex-col h-full bg-white border border-black/5 rounded-sm overflow-hidden shadow-sm hover:shadow-2xl hover:-translate-y-2 transition-all duration-500"
+                >
+                  <Link href={`/blog/${post.slug}`} className="flex flex-col h-full">
+                    {/* Image Area */}
+                    <div className="relative aspect-[16/10] overflow-hidden bg-gray-100">
+                      <Image
+                        src={post.image}
+                        alt={post.title}
+                        fill
+                        className="object-cover transition-transform duration-1000 group-hover:scale-110"
+                      />
+                      <div className="absolute top-4 left-4">
+                        <span className="px-3 py-1 bg-[var(--color-primary-navy)] text-white text-[9px] font-black uppercase tracking-widest shadow-xl">
+                          {post.category}
+                        </span>
+                      </div>
+                      <div className="absolute inset-0 bg-gradient-to-t from-[var(--color-primary-navy)]/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
                     </div>
-                    
-                    <h3 className="text-xl font-black text-[var(--color-primary-navy)] uppercase tracking-tight group-hover:text-[var(--color-accent-gold)] transition-colors leading-tight mb-4">
-                      {post.title}
-                    </h3>
-                    
-                    <p className="text-sm text-gray-500 font-medium leading-relaxed line-clamp-3 mb-8">
-                      {post.excerpt}
-                    </p>
 
-                    <div className="mt-auto pt-6 border-t border-gray-50 flex items-center justify-between">
-                      <span className="text-[10px] font-black uppercase tracking-widest text-[var(--color-primary-navy)] flex items-center gap-2 group-hover:text-[var(--color-accent-gold)] transition-colors">
-                        Read Article 
-                        <ArrowRight className="h-3 w-3 transition-transform duration-300 group-hover:translate-x-1" />
-                      </span>
-                      <div className="h-8 w-8 rounded-full bg-gray-50 flex items-center justify-center text-[var(--color-primary-navy)] group-hover:bg-[var(--color-accent-gold)] group-hover:text-white transition-colors">
-                        <ArrowRight className="h-4 w-4" />
+                    {/* Content Area */}
+                    <div className="flex-1 p-8 flex flex-col">
+                      <div className="flex items-center justify-between mb-4">
+                        <div className="flex items-center gap-4 text-[10px] font-bold text-gray-400 uppercase tracking-widest">
+                          <span className="flex items-center gap-1.5">
+                            <Calendar className="h-3 w-3 text-[var(--color-accent-gold)]" />
+                            {new Date(post.date).toLocaleDateString("en-US", { month: "short", day: "2-digit", year: "numeric" })}
+                          </span>
+                          <span className="flex items-center gap-1.5">
+                            <Clock className="h-3 w-3 text-[var(--color-accent-gold)]" />
+                            {post.readingTime}
+                          </span>
+                        </div>
+                      </div>
+
+                      <h2 className="text-xl font-black text-[var(--color-primary-navy)] uppercase tracking-tight group-hover:text-[var(--color-accent-gold)] transition-colors leading-tight mb-4 line-clamp-2">
+                        {post.title}
+                      </h2>
+
+                      <p className="text-sm text-gray-500 font-medium leading-relaxed mb-8 line-clamp-3">
+                        {post.excerpt}
+                      </p>
+
+                      <div className="mt-auto pt-6 border-t border-black/5 flex items-center justify-between">
+                        <div className="flex items-center gap-3">
+                          <div className="h-8 w-8 rounded-full bg-[var(--color-surface-soft)] border border-black/5 flex items-center justify-center text-[var(--color-primary-navy)] text-[10px] font-black uppercase">
+                            {post.author.charAt(0)}
+                          </div>
+                          <span className="text-[10px] font-bold text-[var(--color-primary-navy)] uppercase tracking-widest">
+                            {post.author}
+                          </span>
+                        </div>
+                        <div className="h-10 w-10 rounded-full bg-[var(--color-surface-soft)] flex items-center justify-center text-[var(--color-primary-navy)] group-hover:bg-[var(--color-accent-gold)] group-hover:text-white transition-all duration-300">
+                          <ArrowUpRight className="h-5 w-5" />
+                        </div>
                       </div>
                     </div>
-                  </div>
-                </Link>
-              </StaggerItem>
-            ))}
-          </div>
-        </StaggerContainer>
+                  </Link>
+                </motion.article>
+              ))}
+            </motion.div>
+          ) : (
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              className="text-center py-20 bg-[var(--color-surface-soft)] rounded-sm border border-black/5"
+            >
+              <h3 className="text-2xl font-black text-[var(--color-primary-navy)] uppercase tracking-tight mb-4">No insights found</h3>
+              <p className="text-gray-500 font-medium mb-8">Try adjusting your search or filters to find what you're looking for.</p>
+              <button
+                onClick={() => {
+                  setSearchTerm("");
+                  setSelectedCategory("");
+                }}
+                className="px-8 py-4 bg-[var(--color-primary-navy)] text-white font-black uppercase tracking-widest text-xs rounded-sm hover:bg-[var(--color-accent-gold)] hover:text-[var(--color-primary-navy)] transition-all"
+              >
+                Reset All Filters
+              </button>
+            </motion.div>
+          )}
+        </AnimatePresence>
       </div>
     </section>
   );

@@ -25,9 +25,9 @@ export async function ProjectsList() {
               <StaggerItem key={project.id}>
                 <Link 
                   href={`/projects/${project.id}`} 
-                  className="group block space-y-6"
+                  className="group block bg-[var(--color-surface-soft)] rounded-sm border border-black/5 overflow-hidden shadow-sm hover:shadow-2xl hover:-translate-y-2 transition-all duration-500"
                 >
-                  <div className="relative aspect-[16/11] rounded-sm overflow-hidden shadow-xl border border-gray-100">
+                  <div className="relative aspect-[16/11] overflow-hidden border-b border-black/5">
                     <Image
                       src={project.image}
                       alt={project.title}
@@ -47,7 +47,7 @@ export async function ProjectsList() {
                     <div className="absolute inset-x-0 bottom-0 h-1/3 bg-gradient-to-t from-black/60 to-transparent pointer-events-none" />
                   </div>
 
-                  <div className="space-y-3">
+                  <div className="p-8 space-y-4">
                     <div className="flex items-center gap-2 text-[var(--color-accent-gold)] font-bold text-[10px] uppercase tracking-widest">
                       <MapPin className="h-3 w-3" />
                       {project.location}
@@ -58,6 +58,10 @@ export async function ProjectsList() {
                     <p className="text-xs text-gray-500 font-medium leading-relaxed line-clamp-2">
                       {project.scope}
                     </p>
+                    <div className="pt-4 border-t border-black/5 flex items-center justify-between">
+                      <span className="text-[9px] font-black uppercase tracking-[0.2em] text-[var(--color-primary-navy)]">Case Study</span>
+                      <ArrowUpRight className="h-4 w-4 text-[var(--color-accent-gold)] group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
+                    </div>
                   </div>
                 </Link>
               </StaggerItem>

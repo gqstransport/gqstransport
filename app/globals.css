@@ -1,4 +1,5 @@
 @import "tailwindcss";
+@plugin "@tailwindcss/typography";
 
 :root {
   /* Brand palette (style guide image 1) */
@@ -116,3 +117,18 @@ body {
 .font-heading {
   font-family: var(--font-app-heading), "Times New Roman", serif;
 }
+
+/* Blog Content Fallback Styles */
+.blog-content h1 { @apply text-4xl lg:text-6xl font-black uppercase tracking-tight mb-12 text-primary; }
+.blog-content h2 { @apply text-3xl lg:text-4xl font-black uppercase tracking-tight mt-16 mb-8 pb-4 border-b border-black/5 text-primary; }
+.blog-content h3 { @apply text-xl lg:text-2xl font-black uppercase tracking-tight mt-10 mb-6 text-primary; }
+.blog-content p { @apply mb-8 leading-[1.8] text-muted font-medium; }
+.blog-content ul { @apply list-disc pl-6 mb-8 space-y-3; }
+.blog-content ol { @apply list-decimal pl-6 mb-8 space-y-3; }
+.blog-content li { @apply text-muted font-medium pl-2; }
+.blog-content strong { @apply font-black text-primary; }
+.blog-content a { @apply text-accent font-bold no-underline hover:underline; }
+.blog-content blockquote { @apply border-l-4 border-accent bg-surface-soft p-8 rounded-sm mb-8 italic; }
+.blog-content table { @apply w-full border-collapse mb-8; }
+.blog-content th { @apply bg-gray-50 p-4 text-left border-b border-gray-100 font-black uppercase text-xs tracking-widest; }
+.blog-content td { @apply p-4 border-b border-gray-50 text-sm; }
