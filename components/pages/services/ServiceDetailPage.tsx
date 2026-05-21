@@ -16,7 +16,7 @@ import {
 import type { ServiceSubpage, ServiceCategory } from "@/lib/services-data";
 import { PageHero } from "@/components/common/PageHero";
 import { Reveal } from "@/components/ui/motion-reveal";
-import Image from "next/image";
+import { CmsImage } from "@/components/ui/CmsImage";
 
 type Props = {
   service: ServiceSubpage;
@@ -126,7 +126,7 @@ export function ServiceDetailPage({ service, category }: Props) {
                 <div className="sticky top-32 space-y-8">
                   {/* Service Visual Card */}
                   <div className="relative w-full aspect-[4/3] rounded-sm overflow-hidden shadow-lg border border-black/5 group bg-[var(--color-surface-soft)]">
-                    <Image
+                    <CmsImage
                       src={service.image || category.image || "/assets/images/founder_operations.png"}
                       alt={service.title}
                       fill

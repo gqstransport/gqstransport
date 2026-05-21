@@ -25,7 +25,7 @@ import { apiUrl } from "@/lib/api";
 import { PageHero } from "@/components/common/PageHero";
 import { ClientLogosMarquee } from "@/components/common/ClientLogosMarquee";
 import { Reveal } from "@/components/ui/motion-reveal";
-import Image from "next/image";
+import { CmsImage } from "@/components/ui/CmsImage";
 
 
 const categoryAltTexts: Record<string, string> = {
@@ -158,7 +158,7 @@ export function ServicesPage() {
 
                     {/* Middle Equipment Image Panel (Column 2) */}
                     <div className="lg:col-span-3 relative min-h-[300px] lg:min-h-full w-full overflow-hidden group bg-[var(--color-surface-soft)]">
-                      <Image
+                      <CmsImage
                         src={category.image || "/assets/images/founder_operations.png"}
                         alt={categoryAltTexts[category.slug] || "GQS Services"}
                         fill

@@ -6,7 +6,7 @@ import { ArrowRight, CheckCircle2, Shield, Zap, Target, Award, ArrowUpRight, Bar
 import type { ServiceCategory } from "@/lib/services-data";
 import { PageHero } from "@/components/common/PageHero";
 import { Reveal } from "@/components/ui/motion-reveal";
-import Image from "next/image";
+import { CmsImage } from "@/components/ui/CmsImage";
 
 
 const categoryAltTexts: Record<string, string> = {
@@ -76,7 +76,7 @@ export function ServiceCategoryPage({ category }: Props) {
             <div className="lg:col-span-5 relative w-full aspect-[4/3] lg:aspect-square">
               <Reveal direction="left">
                 <div className="relative h-full w-full rounded-sm overflow-hidden shadow-2xl border border-black/5 group">
-                  <Image
+                  <CmsImage
                     src={category.image || "/assets/images/founder_operations.png"}
                     alt={categoryAltTexts[category.slug] || "GQS Operations"}
                     fill

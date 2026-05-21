@@ -1,6 +1,7 @@
 import { NextResponse } from "next/server";
 import { z } from "zod";
-import { escapeHtml, sendMail } from "@/lib/mail";
+import { sendMail } from "@/lib/mail";
+import { quoteAdminEmail } from "@/lib/email-templates";
 
 const ALLOWED_EXTENSIONS = [".pdf", ".jpg", ".jpeg", ".png", ".webp"];
 const MAX_FILE_BYTES = 10 * 1024 * 1024;
@@ -69,24 +70,10 @@ export async function POST(request: Request) {
     await sendMail({
       subject: `[GQS Quote Request] ${data.company} – ${data.service}`,
       replyTo: data.email,
-      html: `
-        <h2>New quote request</h2>
-        <p><strong>Name:</strong> ${escapeHtml(data.name)}</p>
-        <p><strong>Company:</strong> ${escapeHtml(data.company)}</p>
-        <p><strong>Email:</strong> ${escapeHtml(data.email)}</p>
-        ${data.phone ? `<p><strong>Phone:</strong> ${escapeHtml(data.phone)}</p>` : ""}
-        <p><strong>Service:</strong> ${escapeHtml(data.service)}</p>
-        ${data.equipment ? `<p><strong>Equipment:</strong> ${escapeHtml(data.equipment)}</p>` : ""}
-        <p><strong>Pickup:</strong> ${escapeHtml(data.pickupLocation)}</p>
-        <p><strong>Drop-off:</strong> ${escapeHtml(data.dropoffLocation)}</p>
-        <p><strong>Schedule:</strong> ${escapeHtml(data.schedule)}</p>
-        ${
-          data.notes
-            ? `<p><strong>Notes:</strong><br />${escapeHtml(data.notes).replace(/\n/g, "<br />")}</p>`
-            : ""
-        }
-        ${attachments ? `<p><strong>Attachment:</strong> ${escapeHtml(attachments[0].filename)}</p>` : ""}
-      `,
+      html: quoteAdminEmail({
+        ...data,
+        attachmentName: attachments?.[0]?.filename,
+      }),
       attachments,
     });
 

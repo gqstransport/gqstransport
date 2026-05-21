@@ -1,16 +1,17 @@
 "use client";
 
-import React, { useState, useMemo } from "react";
+import React, { useState, useMemo, useEffect } from "react";
 import { BlogPost } from "@/lib/mock-blog-data";
-import Image from "next/image";
 import { Link } from "@/i18n/navigation";
-import { Calendar, Clock, Search, Filter, ArrowUpRight, User } from "lucide-react";
+import { Calendar, Clock, Search, Filter, ArrowUpRight } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
-import { cn } from "@/lib/cn";
+import { CmsImage } from "@/components/ui/CmsImage";
+import { ListPagination, PUBLIC_PAGE_SIZE } from "@/components/ui/ListPagination";
 
 export function BlogList({ posts }: { posts: BlogPost[] }) {
   const [searchTerm, setSearchTerm] = useState("");
   const [selectedCategory, setSelectedCategory] = useState("");
+  const [page, setPage] = useState(1);
 
   const categories = useMemo(() => {
     return Array.from(new Set(posts.map((post) => post.category))).sort();
@@ -25,6 +26,21 @@ export function BlogList({ posts }: { posts: BlogPost[] }) {
       return matchesSearch && matchesCategory;
     });
   }, [posts, searchTerm, selectedCategory]);
+
+  const totalPages = Math.max(1, Math.ceil(filteredPosts.length / PUBLIC_PAGE_SIZE));
+
+  const paginatedPosts = useMemo(() => {
+    const start = (page - 1) * PUBLIC_PAGE_SIZE;
+    return filteredPosts.slice(start, start + PUBLIC_PAGE_SIZE);
+  }, [filteredPosts, page]);
+
+  useEffect(() => {
+    setPage(1);
+  }, [searchTerm, selectedCategory]);
+
+  useEffect(() => {
+    if (page > totalPages) setPage(totalPages);
+  }, [page, totalPages]);
 
   return (
     <section className="bg-white py-24 lg:py-32">
@@ -94,11 +110,12 @@ export function BlogList({ posts }: { posts: BlogPost[] }) {
         {/* Results Grid */}
         <AnimatePresence mode="popLayout">
           {filteredPosts.length > 0 ? (
+            <>
             <motion.div
               layout
               className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-12"
             >
-              {filteredPosts.map((post) => (
+              {paginatedPosts.map((post) => (
                 <motion.article
                   layout
                   initial={{ opacity: 0, y: 20 }}
@@ -110,11 +127,12 @@ export function BlogList({ posts }: { posts: BlogPost[] }) {
                   <Link href={`/blog/${post.slug}`} className="flex flex-col h-full">
                     {/* Image Area */}
                     <div className="relative aspect-[16/10] overflow-hidden bg-gray-100">
-                      <Image
+                      <CmsImage
                         src={post.image}
                         alt={post.title}
                         fill
                         className="object-cover transition-transform duration-1000 group-hover:scale-110"
+                        sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                       />
                       <div className="absolute top-4 left-4">
                         <span className="px-3 py-1 bg-[var(--color-primary-navy)] text-white text-[9px] font-black uppercase tracking-widest shadow-xl">
@@ -165,6 +183,8 @@ export function BlogList({ posts }: { posts: BlogPost[] }) {
                 </motion.article>
               ))}
             </motion.div>
+            <ListPagination page={page} totalPages={totalPages} onPageChange={setPage} />
+            </>
           ) : (
             <motion.div
               initial={{ opacity: 0 }}

@@ -5,6 +5,8 @@ import { ServiceCategoryPage } from "@/components/pages/services/ServiceCategory
 import { ServiceDetailPage } from "@/components/pages/services/ServiceDetailPage";
 import type { Metadata } from "next";
 
+export const dynamic = "force-dynamic";
+
 type Props = {
   params: Promise<{ locale: string; slug: string }>;
 };

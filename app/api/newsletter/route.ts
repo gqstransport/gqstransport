@@ -1,6 +1,7 @@
 import { NextResponse } from "next/server";
 import { z } from "zod";
-import { escapeHtml, sendMail } from "@/lib/mail";
+import { sendMail } from "@/lib/mail";
+import { newsletterAdminEmail, newsletterWelcomeEmail } from "@/lib/email-templates";
 
 const newsletterSchema = z.object({
   email: z.string().email().max(200),
@@ -18,27 +19,18 @@ export async function POST(request: Request) {
     }
 
     const { email } = parsed.data;
-    const safeEmail = escapeHtml(email);
 
     await sendMail({
       subject: "[GQS Newsletter] New subscriber",
       replyTo: email,
-      html: `
-        <h2>New newsletter subscription</h2>
-        <p><strong>Email:</strong> ${safeEmail}</p>
-        <p>Subscribed via the website footer.</p>
-      `,
+      html: newsletterAdminEmail(email),
     });
 
     try {
       await sendMail({
         to: email,
         subject: "You're subscribed to GQS updates",
-        html: `
-          <h2>Thank you for subscribing</h2>
-          <p>You will receive updates on heavy transport routes and machinery availability from Gulf Quality Structure.</p>
-          <p style="color:#666;font-size:14px;">If you did not request this, you can ignore this email.</p>
-        `,
+        html: newsletterWelcomeEmail(email),
       });
     } catch (confirmErr) {
       console.error("Newsletter confirmation email error:", confirmErr);

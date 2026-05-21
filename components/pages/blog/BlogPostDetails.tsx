@@ -1,7 +1,7 @@
 "use client";
 
 import { BlogPost } from "@/lib/mock-blog-data";
-import Image from "next/image";
+import { CmsImage } from "@/components/ui/CmsImage";
 import { Link } from "@/i18n/navigation";
 import { Calendar, User, ChevronLeft, Share2, Clock, ArrowUpRight, CheckCircle2 } from "lucide-react";
 import { motion } from "framer-motion";
@@ -76,12 +76,13 @@ export function BlogPostDetails({ post, allPosts }: Props) {
               >
                 {/* Main Image */}
                 <div className="relative aspect-[16/9] rounded-sm overflow-hidden shadow-2xl border border-black/5">
-                  <Image 
+                  <CmsImage 
                     src={post.image} 
                     alt={post.title} 
                     fill 
                     className="object-cover"
                     priority
+                    sizes="(max-width: 1024px) 100vw, 66vw"
                   />
                   <div className="absolute top-0 left-0 w-full h-1 gradient-line" />
                 </div>
@@ -195,11 +196,12 @@ export function BlogPostDetails({ post, allPosts }: Props) {
                 >
                   <Link href={`/blog/${rp.slug}`} className="flex flex-col h-full">
                     <div className="relative aspect-[16/10] overflow-hidden bg-gray-100">
-                      <Image 
+                      <CmsImage 
                         src={rp.image} 
                         alt={rp.title} 
                         fill 
                         className="object-cover transition-transform duration-1000 group-hover:scale-110"
+                        sizes="(max-width: 768px) 100vw, 33vw"
                       />
                       <div className="absolute top-4 left-4">
                         <span className="px-3 py-1 bg-[var(--color-primary-navy)] text-white text-[9px] font-black uppercase tracking-widest shadow-xl">

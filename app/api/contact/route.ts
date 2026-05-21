@@ -1,6 +1,7 @@
 import { NextResponse } from "next/server";
 import { z } from "zod";
-import { escapeHtml, sendMail } from "@/lib/mail";
+import { sendMail } from "@/lib/mail";
+import { contactAdminEmail } from "@/lib/email-templates";
 
 const contactSchema = z.object({
   name: z.string().min(1).max(200),
@@ -26,15 +27,7 @@ export async function POST(request: Request) {
     await sendMail({
       subject: `[GQS Contact] ${subject}`,
       replyTo: email,
-      html: `
-        <h2>New contact message</h2>
-        <p><strong>Name:</strong> ${escapeHtml(name)}</p>
-        <p><strong>Email:</strong> ${escapeHtml(email)}</p>
-        ${phone ? `<p><strong>Phone:</strong> ${escapeHtml(phone)}</p>` : ""}
-        <p><strong>Subject:</strong> ${escapeHtml(subject)}</p>
-        <hr />
-        <p>${escapeHtml(message).replace(/\n/g, "<br />")}</p>
-      `,
+      html: contactAdminEmail({ name, email, subject, message, phone }),
     });
 
     return NextResponse.json({ success: true, message: "Message sent successfully" });

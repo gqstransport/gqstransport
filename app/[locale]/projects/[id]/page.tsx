@@ -1,9 +1,11 @@
 import { PageHero } from "@/components/common/PageHero";
 import { MapPin, Box, Truck, AlertCircle, Calendar, ChevronLeft } from "lucide-react";
 import { Link } from "@/i18n/navigation";
-import Image from "next/image";
 import { Reveal } from "@/components/ui/motion-reveal";
 import { getProjects } from "@/lib/projects-data";
+import { CmsImage } from "@/components/ui/CmsImage";
+
+export const dynamic = "force-dynamic";
 
 interface Props {
   params: Promise<{ id: string }>;
@@ -35,11 +37,12 @@ export default async function ProjectPage({ params }: Props) {
             <div className="lg:col-span-7 space-y-8">
               <Reveal direction="up">
                 <div className="relative aspect-[16/10] rounded-sm overflow-hidden shadow-2xl border border-gray-100">
-                  <Image 
+                  <CmsImage 
                     src={project.image} 
                     alt={project.title} 
                     fill 
                     className="object-cover"
+                    sizes="(max-width: 1024px) 100vw, 66vw"
                   />
                   <div className="absolute top-0 left-0 w-full h-1 gradient-line" />
                 </div>
