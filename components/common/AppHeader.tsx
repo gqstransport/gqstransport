@@ -69,6 +69,7 @@ export async function AppHeader() {
                 src="/assets/images/logo.png" 
                 alt="GQS Logo" 
                 fill 
+                sizes="60px"
                 className="object-contain"
                 priority
               />

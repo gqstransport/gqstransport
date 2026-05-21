@@ -39,10 +39,10 @@ export async function HomeWhyChooseUs() {
         </div>
 
         <StaggerContainer staggerDelay={0.1}>
-          <div className="grid grid-cols-1 md:grid-cols-12 gap-3 auto-rows-[220px]">
+          <div className="grid grid-cols-1 md:grid-cols-12 gap-3 auto-rows-[260px]">
             {/* Large Bento Item 1 */}
             <div className="md:col-span-8 md:row-span-2 group">
-              <StaggerItem>
+              <StaggerItem className="h-full w-full">
                 <div className="h-full w-full p-8 bg-[var(--color-primary-navy)] rounded-sm relative overflow-hidden flex flex-col justify-between border border-white/5 shadow-2xl">
                   {/* Design accent */}
                   <div className="absolute top-0 left-0 w-full h-1 gradient-line opacity-50" />
@@ -73,7 +73,7 @@ export async function HomeWhyChooseUs() {
 
             {/* Small Bento Item 1: Mobilization */}
             <div className="md:col-span-4 md:row-span-1 group">
-              <StaggerItem>
+              <StaggerItem className="h-full w-full">
                 <div className="h-full w-full p-8 bg-[var(--color-surface-soft)] rounded-sm border border-[var(--color-border)] hover:border-[var(--color-accent-gold)] transition-all duration-500 flex flex-col justify-center">
                   <div className="flex items-center gap-4 mb-4">
                     <div className="h-10 w-10 rounded-sm bg-[var(--color-primary-navy)] flex items-center justify-center text-white">
@@ -92,7 +92,7 @@ export async function HomeWhyChooseUs() {
 
             {/* Small Bento Item 2: Network */}
             <div className="md:col-span-4 md:row-span-1 group">
-              <StaggerItem>
+              <StaggerItem className="h-full w-full">
                 <div className="h-full w-full p-8 bg-white rounded-sm border border-[var(--color-border)] hover:border-[var(--color-accent-gold)] transition-all duration-500 shadow-sm flex flex-col justify-center">
                   <div className="flex items-center gap-4 mb-4">
                     <div className="h-10 w-10 rounded-sm bg-[var(--color-accent-gold)] flex items-center justify-center text-[var(--color-primary-navy)]">
@@ -111,7 +111,7 @@ export async function HomeWhyChooseUs() {
 
             {/* Bento Item: Pricing (Horizontal) */}
             <div className="md:col-span-6 md:row-span-1 group">
-              <StaggerItem>
+              <StaggerItem className="h-full w-full">
                 <div className="h-full w-full p-8 bg-[var(--color-accent-gold)] rounded-sm flex items-center gap-8 group-hover:scale-[1.02] transition-transform duration-500">
                   <div className="hidden sm:flex h-16 w-16 shrink-0 rounded-sm bg-[var(--color-primary-navy)] items-center justify-center text-white shadow-lg">
                     <DollarSign className="h-8 w-8" />
@@ -130,7 +130,7 @@ export async function HomeWhyChooseUs() {
 
             {/* Bento Item: Team (Horizontal) */}
             <div className="md:col-span-6 md:row-span-1 group">
-              <StaggerItem>
+              <StaggerItem className="h-full w-full">
                 <div className="h-full w-full p-8 bg-gray-50 rounded-sm border border-[var(--color-border)] flex items-center gap-8 hover:bg-white transition-colors duration-500">
                   <div className="hidden sm:flex h-16 w-16 shrink-0 rounded-sm bg-gray-200 items-center justify-center text-[var(--color-primary-navy)]">
                     <Users className="h-8 w-8" />

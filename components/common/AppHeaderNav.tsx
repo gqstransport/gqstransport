@@ -116,6 +116,7 @@ export function AppHeaderNav({ sections, quoteLabel, brand, menuOpenLabel, menuC
             return (
               <div key={d.id} className="relative" ref={setDropdownRef(d.id)}>
                 <button
+                  suppressHydrationWarning
                   type="button"
                   className={cn(
                     "group flex items-center gap-0.5 px-2 py-2 text-[10px] font-semibold uppercase tracking-[0.1em] transition-colors xl:gap-1 xl:px-2.5 xl:text-[11px] xl:tracking-[0.12em]",
@@ -236,6 +237,7 @@ export function AppHeaderNav({ sections, quoteLabel, brand, menuOpenLabel, menuC
                   src="/assets/images/logo.png" 
                   alt="GQS Logo" 
                   fill 
+                  sizes="40px"
                   className="object-contain" 
                 />
               </div>

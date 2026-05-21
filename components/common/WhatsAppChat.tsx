@@ -133,6 +133,7 @@ export const WhatsAppChat = () => {
         </AnimatePresence>
 
         <button
+          suppressHydrationWarning
           onClick={() => {
             setIsOpen(!isOpen);
             setShowNotification(false);

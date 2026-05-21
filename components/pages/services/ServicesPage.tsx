@@ -27,13 +27,6 @@ import { ClientLogosMarquee } from "@/components/common/ClientLogosMarquee";
 import { Reveal } from "@/components/ui/motion-reveal";
 import Image from "next/image";
 
-const categoryImages: Record<string, string> = {
-  "heavy-transport": "/assets/images/fleet_heavy_cargo.png",
-  "heavy-machinery-rental": "/assets/images/fleet_excavator.png",
-  "hiab-boom-truck-services": "/assets/images/image_8.png",
-  "project-logistics-support": "/assets/images/fleet_flatbed.png",
-  "industrial-support-services": "/assets/images/founder_operations.png",
-};
 
 const categoryAltTexts: Record<string, string> = {
   "heavy-transport": "GQS Heavy Transport Services",
@@ -166,7 +159,7 @@ export function ServicesPage() {
                     {/* Middle Equipment Image Panel (Column 2) */}
                     <div className="lg:col-span-3 relative min-h-[300px] lg:min-h-full w-full overflow-hidden group bg-[var(--color-surface-soft)]">
                       <Image
-                        src={categoryImages[category.slug] || "/assets/images/founder_operations.png"}
+                        src={category.image || "/assets/images/founder_operations.png"}
                         alt={categoryAltTexts[category.slug] || "GQS Services"}
                         fill
                         sizes="(max-width: 1024px) 100vw, 25vw"

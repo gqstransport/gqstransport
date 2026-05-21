@@ -67,21 +67,21 @@ export async function HomeMachineryRental() {
               <div className="grid grid-cols-2 gap-4">
                 <div className="space-y-4">
                   <div className="aspect-square relative rounded-sm overflow-hidden group shadow-2xl">
-                    <Image src="/assets/images/image_4.jpeg" alt="Machinery" fill className="object-cover transition-transform duration-700 group-hover:scale-110" />
+                    <Image src="/assets/images/image_4.jpeg" alt="Machinery" fill sizes="(max-width: 1024px) 50vw, 25vw" className="object-cover transition-transform duration-700 group-hover:scale-110" />
                     <div className="absolute inset-0 bg-black/20 group-hover:bg-transparent transition-colors" />
                   </div>
                   <div className="aspect-[3/4] relative rounded-sm overflow-hidden group shadow-2xl">
-                    <Image src="/assets/images/image_7.jpeg" alt="Machinery" fill className="object-cover transition-transform duration-700 group-hover:scale-110" />
+                    <Image src="/assets/images/fleet_excavator.png" alt="Machinery" fill sizes="(max-width: 1024px) 50vw, 25vw" className="object-cover transition-transform duration-700 group-hover:scale-110" />
                     <div className="absolute inset-0 bg-black/20 group-hover:bg-transparent transition-colors" />
                   </div>
                 </div>
                 <div className="space-y-4 pt-12">
                   <div className="aspect-[3/4] relative rounded-sm overflow-hidden group shadow-2xl">
-                    <Image src="/assets/images/image_12.jpeg" alt="Machinery" fill className="object-cover transition-transform duration-700 group-hover:scale-110" />
+                    <Image src="/assets/images/image_12.jpeg" alt="Machinery" fill sizes="(max-width: 1024px) 50vw, 25vw" className="object-cover transition-transform duration-700 group-hover:scale-110" />
                     <div className="absolute inset-0 bg-black/20 group-hover:bg-transparent transition-colors" />
                   </div>
                   <div className="aspect-square relative rounded-sm overflow-hidden group shadow-2xl">
-                    <Image src="/assets/images/image_6.jpeg" alt="Machinery" fill className="object-cover transition-transform duration-700 group-hover:scale-110" />
+                    <Image src="/assets/images/image_6.jpeg" alt="Machinery" fill sizes="(max-width: 1024px) 50vw, 25vw" className="object-cover transition-transform duration-700 group-hover:scale-110" />
                     <div className="absolute inset-0 bg-black/20 group-hover:bg-transparent transition-colors" />
                   </div>
                 </div>

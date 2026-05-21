@@ -18,27 +18,6 @@ import { PageHero } from "@/components/common/PageHero";
 import { Reveal } from "@/components/ui/motion-reveal";
 import Image from "next/image";
 
-const serviceImages: Record<string, string> = {
-  // Service-specific subpage images
-  "flatbed-trailer-rental": "/assets/images/fleet_flatbed.png",
-  "lowbed-trailer-rental": "/assets/images/fleet_lowbed.png",
-  "excavator-rental": "/assets/images/fleet_excavator.png",
-  "crane-rental": "/assets/images/fleet_crane.png",
-  "hiab-truck-rental": "/assets/images/fleet_boom_truck.png",
-  "wheel-loader-rental": "/assets/images/fleet_wheel_loader.png",
-  "forklift-rental": "/assets/images/fleet_forklift.png",
-  "heavy-cargo-haulage": "/assets/images/fleet_heavy_cargo.png",
-  "industrial-logistics-coordination": "/assets/images/fleet_flatbed.png",
-  "industrial-rigging-support": "/assets/images/founder_operations.png",
-
-  // Category fallback images
-  "heavy-transport": "/assets/images/fleet_heavy_cargo.png",
-  "heavy-machinery-rental": "/assets/images/fleet_excavator.png",
-  "hiab-boom-truck-services": "/assets/images/image_8.png",
-  "project-logistics-support": "/assets/images/fleet_flatbed.png",
-  "industrial-support-services": "/assets/images/founder_operations.png",
-};
-
 type Props = {
   service: ServiceSubpage;
   category: ServiceCategory;
@@ -148,7 +127,7 @@ export function ServiceDetailPage({ service, category }: Props) {
                   {/* Service Visual Card */}
                   <div className="relative w-full aspect-[4/3] rounded-sm overflow-hidden shadow-lg border border-black/5 group bg-[var(--color-surface-soft)]">
                     <Image
-                      src={serviceImages[service.slug] || serviceImages[category.slug] || "/assets/images/founder_operations.png"}
+                      src={service.image || category.image || "/assets/images/founder_operations.png"}
                       alt={service.title}
                       fill
                       sizes="(max-width: 768px) 100vw, 40vw"

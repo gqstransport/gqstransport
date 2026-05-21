@@ -136,10 +136,10 @@ const LoadingAnimation: React.FC = () => {
       <div className="milPreloaderAnimation relative z-10">
         <div className="milPosAbs milAnimation1">
           <p className="milH3 font-heading font-bold color-mil-txt">
-            Trusted
+            Industrial
           </p>
           <p className="milH3 font-heading font-bold color-mil-txt" style={{ color: 'var(--color-accent-gold)' }}>
-            Industrial Logistics
+            Logistics
           </p>
           <p className="milH3 font-heading font-bold color-mil-txt">
             Experts
@@ -160,6 +160,8 @@ const LoadingAnimation: React.FC = () => {
           </div>
         </div>
       </div>
+      {/* Dummy element for GSAP .milUp target to prevent warnings */}
+      <div className="milUp hidden" />
     </div>
   )
 }

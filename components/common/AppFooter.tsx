@@ -71,6 +71,28 @@ export async function AppFooter() {
                 </li>
               ))}
             </ul>
+            <div className="pt-4 mt-4 border-t border-[var(--color-accent-gold)]/20">
+              <ul className="space-y-4">
+                <li>
+                  <Link
+                    href="/privacy-policy"
+                    className="text-sm font-bold uppercase tracking-widest text-white/40 hover:text-white transition-colors flex items-center gap-2 group"
+                  >
+                    <div className="h-px w-0 bg-[var(--color-accent-gold)] transition-all group-hover:w-4" />
+                    Privacy Policy
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    href="/terms-conditions"
+                    className="text-sm font-bold uppercase tracking-widest text-white/40 hover:text-white transition-colors flex items-center gap-2 group"
+                  >
+                    <div className="h-px w-0 bg-[var(--color-accent-gold)] transition-all group-hover:w-4" />
+                    Terms & Conditions
+                  </Link>
+                </li>
+              </ul>
+            </div>
           </div>
 
           {/* Core Services */}

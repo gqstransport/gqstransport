@@ -78,10 +78,12 @@ export function StaggerItem({
   children,
   direction = "up",
   distance = 20,
+  className,
 }: {
   children: ReactNode;
   direction?: "up" | "down" | "left" | "right";
   distance?: number;
+  className?: string;
 }) {
   const directions = {
     up: { y: distance },
@@ -92,6 +94,7 @@ export function StaggerItem({
 
   return (
     <motion.div
+      className={className}
       variants={{
         hidden: { opacity: 0, ...directions[direction] },
         show: { opacity: 1, x: 0, y: 0 },
