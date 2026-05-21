@@ -1,0 +1,160 @@
+[
+  {
+    "id": "s1",
+    "slug": "flatbed-trailer-rental",
+    "categorySlug": "heavy-transport",
+    "title": "Flatbed Trailer Rental",
+    "description": "Transportation solutions for steel, containers, industrial materials, and general cargo.",
+    "overview": "Our flatbed trailer rental services provide versatile and reliable transportation for a wide range of industrial loads. Whether you are moving construction materials, shipping containers, or heavy pipes, our fleet is equipped to handle standard and oversized deck loads across KSA.",
+    "applications": ["Construction material transport", "Container logistics", "Steel & pipe movement", "General industrial cargo"],
+    "features": ["Standard & Extendable decks", "Secure tie-down systems", "GPS-tracked fleet", "Professional operators"],
+    "fleetDetails": {
+      "types": ["40ft Flatbed", "Extendable Flatbed", "Multi-axle Flatbed"],
+      "capacity": "Up to 50 Tons",
+      "availability": "Immediate mobilization across Eastern, Central, and Western regions"
+    },
+    "status": "Active"
+  },
+  {
+    "id": "s2",
+    "slug": "lowbed-trailer-rental",
+    "categorySlug": "heavy-transport",
+    "title": "Lowbed Trailer Rental",
+    "description": "Specialized heavy equipment transportation for oversized and heavy machinery.",
+    "overview": "GQS specializes in lowbed trailer solutions designed for tall, heavy, and oversized machinery. Our low deck heights ensure safe clearance for high-profile equipment such as excavators, cranes, and industrial modules.",
+    "applications": ["Excavator & Dozer transport", "Crane component movement", "Industrial module delivery", "Oversized machinery rolls"],
+    "features": ["Low deck height for high clearance", "Heavy-duty ramps", "Multi-axle configurations", "Escort & permit coordination"],
+    "fleetDetails": {
+      "types": ["Gooseneck Lowbed", "Step-deck Trailer", "Multi-axle Modular"],
+      "capacity": "Up to 120 Tons",
+      "availability": "Specialized units available for project-based long-term hire"
+    },
+    "status": "Active"
+  },
+  {
+    "id": "s3",
+    "slug": "excavator-rental",
+    "categorySlug": "heavy-machinery-rental",
+    "title": "Excavator Rental",
+    "description": "Tracked and wheeled excavators for earthworks and plant projects.",
+    "overview": "Our excavator fleet includes various sizes and attachment options to suit any project, from small trenching to major earthmoving operations.",
+    "applications": ["Earthmoving", "Trenching", "Demolition support", "Site preparation"],
+    "features": ["Modern OEM fleet", "Certified operators", "On-site maintenance support"],
+    "fleetDetails": {
+      "types": ["20T Excavator", "30T Excavator", "Long-reach units"],
+      "capacity": "Various",
+      "availability": "Daily, Weekly, and Monthly rental options"
+    },
+    "status": "Active"
+  },
+  {
+    "id": "s4",
+    "slug": "crane-rental",
+    "categorySlug": "heavy-machinery-rental",
+    "title": "Crane Rental",
+    "description": "Lift planning with certified operators and rigging supervision.",
+    "overview": "Safe and efficient lifting solutions with a range of mobile and crawler cranes. We provide full lift planning and risk assessments for every deployment.",
+    "applications": ["Industrial lifting", "Steel erection", "Equipment positioning", "Concrete works"],
+    "features": ["TUV certified cranes", "Aramco/SABIC approved operators", "Complete rigging sets"],
+    "fleetDetails": {
+      "types": ["50T Mobile Crane", "100T Mobile Crane", "Rough Terrain Cranes"],
+      "capacity": "Up to 250 Tons",
+      "availability": "On request"
+    },
+    "status": "Active"
+  },
+  {
+    "id": "s5",
+    "slug": "hiab-truck-rental",
+    "categorySlug": "hiab-boom-truck-services",
+    "title": "Hiab Truck Rental",
+    "description": "Knuckle-boom precision for congested sites and tight lifts.",
+    "overview": "Our Hiab trucks combine transport and lifting in one unit, making them ideal for urban projects and tight industrial spaces.",
+    "applications": ["Container positioning", "Generator installation", "Steel structure delivery"],
+    "features": ["Integrated crane & deck", "Remote control operation", "Compact footprint"],
+    "fleetDetails": {
+      "types": ["Standard Hiab", "Heavy lift Hiab"],
+      "capacity": "Up to 15 Tons",
+      "availability": "Immediate"
+    },
+    "status": "Active"
+  },
+  {
+    "id": "s6",
+    "slug": "industrial-logistics-coordination",
+    "categorySlug": "project-logistics-support",
+    "title": "Industrial Logistics Coordination",
+    "description": "Managing complex supply chains for industrial projects.",
+    "overview": "Centralized coordination for all your industrial logistics needs, ensuring seamless movement of materials and equipment.",
+    "applications": ["Major plant builds", "Infrastructure developments", "Regional logistics hubs"],
+    "features": ["Sequence-based delivery", "Laydown yard management", "Real-time tracking dashboard"],
+    "fleetDetails": {
+      "capacity": "Project specific"
+    },
+    "status": "Active"
+  },
+  {
+    "id": "s7",
+    "slug": "wheel-loader-rental",
+    "categorySlug": "heavy-machinery-rental",
+    "title": "Wheel Loader Rental",
+    "description": "High-capacity wheel loaders for material loading and site logistics support.",
+    "overview": "Our wheel loader rental fleet features advanced, high-efficiency material loaders designed for aggregate handling, bulk material movement, and industrial site support across Saudi Arabia.",
+    "applications": ["Aggregate material loading", "Site clearing and leveling", "Bulk stock handling", "Construction site support"],
+    "features": ["High bucket capacities", "Fuel-efficient engines", "All-terrain high-traction tyres", "Operator safety cabins"],
+    "fleetDetails": {
+      "types": ["3 Cubic Meter Loader", "5 Cubic Meter Loader", "Heavy Quarry Loader"],
+      "capacity": "Up to 8 Tons payload",
+      "availability": "Immediate mobilization for short & long term contracts"
+    },
+    "status": "Active"
+  },
+  {
+    "id": "s8",
+    "slug": "forklift-rental",
+    "categorySlug": "heavy-machinery-rental",
+    "title": "Forklift Rental",
+    "description": "Industrial forklifts for warehouse operations, cargo handling, and logistics.",
+    "overview": "GQS offers robust diesel and electric forklift rental options with varying lift capacities and mast heights to support warehouse operations, factory logistics, and cargo handling.",
+    "applications": ["Warehouse pallet movement", "Factory logistics support", "Loading and unloading cargo", "Port logistics side-handling"],
+    "features": ["Diesel & Electric models", "Triplex container masts", "Side-shift attachments", "TUV certified equipment"],
+    "fleetDetails": {
+      "types": ["3-Ton Diesel Forklift", "5-Ton Diesel Forklift", "10-Ton Heavy Forklift"],
+      "capacity": "Up to 15 Tons",
+      "availability": "Immediate warehouse deployments"
+    },
+    "status": "Active"
+  },
+  {
+    "id": "s9",
+    "slug": "heavy-cargo-haulage",
+    "categorySlug": "heavy-transport",
+    "title": "Heavy Cargo Haulage",
+    "description": "Specialized multi-axle heavy haulage solutions for oversized industrial cargos.",
+    "overview": "Our heavy cargo haulage services utilize high-tonnage multi-axle systems and specialized step-decks to transport oversized pressure vessels, plant modules, and high-value components safely under strict engineering compliance.",
+    "applications": ["Refinery pressure vessels", "Modular building modules", "Power plant generators", "Heavy structural steel columns"],
+    "features": ["Engineered heavy haulage plans", "Route survey and permit approvals", "Hydraulic platform trailers", "Professional escort support"],
+    "fleetDetails": {
+      "types": ["Multi-Axle Hydraulic Trailer", "Heavy Step-Deck Trailer", "Specialized modular setups"],
+      "capacity": "Up to 250 Tons",
+      "availability": "Requires engineered route survey before deployment"
+    },
+    "status": "Active"
+  },
+  {
+    "id": "s10",
+    "slug": "industrial-rigging-support",
+    "categorySlug": "industrial-support-services",
+    "title": "Industrial Rigging Support",
+    "description": "Professional lifting coordination, rigging crews, and TUV certified supervision.",
+    "overview": "GQS provides fully managed industrial rigging services including site heavy-lift plans, professional rigging crews, Aramco approved riggers, and certified lifting equipment sets to ensure secure lifts.",
+    "applications": ["Refinery turnaround lifts", "Structural steel assembly", "Heavy machinery installation", "Plant shutdown support"],
+    "features": ["Aramco & SABIC approved riggers", "Engineered lifting calculation packages", "TUV certified rigging gear", "On-site safety supervision"],
+    "fleetDetails": {
+      "types": ["Full lifting tackle sets", "Spreader beams", "Hydraulic jacks and rollers"],
+      "capacity": "Up to 500 Tons lift support",
+      "availability": "Available with complete technical field teams"
+    },
+    "status": "Active"
+  }
+]

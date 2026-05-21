@@ -1,0 +1,62 @@
+[
+  {
+    "id": "p1",
+    "title": "Industrial Plant Mobilization",
+    "scope": "Strategic mobilization of heavy equipment for a major industrial plant shutdown.",
+    "location": "Dammam Industrial City",
+    "equipment": "Lowbed Trailers, 100T Cranes, Support Vehicles",
+    "challenge": "Coordinating 40+ units within a strict 48-hour mobilization window.",
+    "image": "/assets/images/image_1.jpeg",
+    "status": "Completed"
+  },
+  {
+    "id": "p2",
+    "title": "Cross-Border Industrial Logistics",
+    "scope": "Transporting oversized industrial components across GCC borders.",
+    "location": "Riyadh to Abu Dhabi, UAE",
+    "equipment": "Extendable Flatbeds, Escort Convoys",
+    "challenge": "Managing complex multi-border permits and oversized cargo engineering.",
+    "image": "/assets/images/image_11.png",
+    "status": "Completed"
+  },
+  {
+    "id": "p3",
+    "title": "Port-to-Site Heavy Cargo Project",
+    "scope": "Handling and transporting critical machinery from Jubail Port to site.",
+    "location": "Jubail Industrial Port",
+    "equipment": "Heavy-Duty Forklifts, Hiab Boom Trucks",
+    "challenge": "Navigating high-traffic port limits under strict safety protocols.",
+    "image": "/assets/images/image_9.png",
+    "status": "Completed"
+  },
+  {
+    "id": "p4",
+    "title": "Oil Rig Equipment Mobilization",
+    "scope": "Comprehensive transport and positioning of heavy oil rig components.",
+    "location": "Haradh Oil Field",
+    "equipment": "Multi-axle lowbeds, heavy haulage tractors, 250T mobile cranes",
+    "challenge": "Navigating remote, sandy off-road rig sites with high-tonnage cargo.",
+    "image": "/assets/images/image_8.png",
+    "status": "Completed"
+  },
+  {
+    "id": "p5",
+    "title": "SABIC Plant Shutdown Expansion",
+    "scope": "Full-scale logistics mobilization and heavy lifts for mechanical turnaround.",
+    "location": "Jubail Industrial City",
+    "equipment": "TUV certified boom trucks, flatbeds, rigging supervisor support",
+    "challenge": "Coordinating complex high-hazard lifts within active plant zones under zero LTI protocols.",
+    "image": "/assets/images/image_9.png",
+    "status": "Completed"
+  },
+  {
+    "id": "p6",
+    "title": "Saudi Aramco Pipeline Logistics",
+    "scope": "Long-distance transport of thousands of tons of high-grade steel pipes.",
+    "location": "Yanbu to Central Region",
+    "equipment": "Extendable flatbed trailers, escort vehicles, logistics coordinators",
+    "challenge": "Maintaining secure continuous logistics pipelines over 800km of highway routes.",
+    "image": "/assets/images/image_11.png",
+    "status": "Completed"
+  }
+]

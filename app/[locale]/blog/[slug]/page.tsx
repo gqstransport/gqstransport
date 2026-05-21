@@ -1,4 +1,4 @@
-import { MOCK_BLOG_POSTS } from "@/lib/mock-blog-data";
+import { getBlogPosts } from "@/lib/mock-blog-data";
 import { BlogPostDetails } from "@/components/pages/blog/BlogPostDetails";
 import { HomeCTA } from "@/components/pages/home/sections/HomeCTA";
 import { notFound } from "next/navigation";
@@ -9,7 +9,8 @@ interface Props {
 
 export default async function BlogPostPage({ params }: Props) {
   const { slug } = await params;
-  const post = MOCK_BLOG_POSTS.find((p) => p.slug === slug);
+  const posts = await getBlogPosts();
+  const post = posts.find((p) => p.slug === slug);
 
   if (!post) {
     notFound();
@@ -17,7 +18,7 @@ export default async function BlogPostPage({ params }: Props) {
 
   return (
     <main>
-      <BlogPostDetails post={post} />
+      <BlogPostDetails post={post} allPosts={posts} />
       <HomeCTA />
     </main>
   );

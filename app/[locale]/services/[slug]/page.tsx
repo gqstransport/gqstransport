@@ -10,7 +10,7 @@ type Props = {
 };
 
 export async function generateStaticParams() {
-  const slugs = getAllSlugs();
+  const slugs = await getAllSlugs();
   const locales = ["en", "ar"]; // Assuming these are the supported locales
   
   const params = [];
@@ -24,7 +24,7 @@ export async function generateStaticParams() {
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = await params;
-  const result = getServiceBySlug(slug);
+  const result = await getServiceBySlug(slug);
 
   if (!result) return {};
 
@@ -45,7 +45,7 @@ export default async function Page({ params }: Props) {
   const { locale, slug } = await params;
   setRequestLocale(locale);
 
-  const result = getServiceBySlug(slug);
+  const result = await getServiceBySlug(slug);
 
   if (!result) {
     notFound();

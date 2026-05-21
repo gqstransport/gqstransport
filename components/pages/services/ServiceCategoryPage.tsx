@@ -6,6 +6,23 @@ import { ArrowRight, CheckCircle2, Shield, Zap, Target, Award, ArrowUpRight, Bar
 import type { ServiceCategory } from "@/lib/services-data";
 import { PageHero } from "@/components/common/PageHero";
 import { Reveal } from "@/components/ui/motion-reveal";
+import Image from "next/image";
+
+const categoryImages: Record<string, string> = {
+  "heavy-transport": "/assets/images/fleet_heavy_cargo.png",
+  "heavy-machinery-rental": "/assets/images/fleet_excavator.png",
+  "hiab-boom-truck-services": "/assets/images/image_8.png",
+  "project-logistics-support": "/assets/images/fleet_flatbed.png",
+  "industrial-support-services": "/assets/images/founder_operations.png",
+};
+
+const categoryAltTexts: Record<string, string> = {
+  "heavy-transport": "GQS Heavy Transport Services",
+  "heavy-machinery-rental": "GQS Heavy Machinery Rental",
+  "hiab-boom-truck-services": "GQS Hiab & Boom Truck Services",
+  "project-logistics-support": "GQS Project Logistics Support",
+  "industrial-support-services": "GQS Industrial Support Operations",
+};
 
 type Props = {
   category: ServiceCategory;
@@ -29,57 +46,101 @@ export function ServiceCategoryPage({ category }: Props) {
         centered={true}
       />
 
-      {/* Overview & Value Proposition */}
-      <section className="py-20 lg:py-32 overflow-hidden bg-white">
+      {/* Overview & Value Proposition (Split Image & Text Layout) */}
+      <section className="py-20 lg:py-32 overflow-hidden bg-white relative">
         <div className="container mx-auto px-4">
-          <div className="grid lg:grid-cols-2 gap-16 items-center">
-            <Reveal direction="right">
-              <div className="space-y-8">
-                <div className="inline-flex items-center gap-2 rounded-sm bg-[var(--color-surface-soft)] px-4 py-2 text-sm font-bold uppercase tracking-widest text-[var(--color-primary-navy)] border border-black/5">
-                  <Box className="h-4 w-4 text-[var(--color-accent-gold)]" />
-                  Category Profile
+          <div className="grid lg:grid-cols-12 gap-16 items-center">
+            
+            {/* Left Column: Category Description Text */}
+            <div className="lg:col-span-7">
+              <Reveal direction="right">
+                <div className="space-y-8 text-left">
+                  <div className="inline-flex items-center gap-2 rounded-sm bg-[var(--color-surface-soft)] px-4 py-2 text-sm font-bold uppercase tracking-widest text-[var(--color-primary-navy)] border border-black/5">
+                    <Box className="h-4 w-4 text-[var(--color-accent-gold)]" />
+                    Category Profile
+                  </div>
+                  <h2 className="font-heading text-4xl font-bold text-[var(--color-primary-navy)] leading-tight md:text-5xl">
+                    Transforming Industrial Logistics in KSA
+                  </h2>
+                  <div className="h-1 w-20 bg-[var(--color-accent-gold)]" />
+                  <p className="text-xl text-[var(--color-text-muted)] leading-relaxed">
+                    {category.description}
+                  </p>
+                  <div className="pt-4">
+                    <Link
+                      href="/request-a-quote"
+                      className="group inline-flex items-center gap-4 text-lg font-bold text-[var(--color-primary-navy)]"
+                    >
+                      <span className="border-b-2 border-transparent transition-colors group-hover:border-[var(--color-accent-gold)]">Discuss Your Project Requirements</span>
+                      <ArrowRight className="h-5 w-5 text-[var(--color-accent-gold)] transition-transform group-hover:translate-x-2" />
+                    </Link>
+                  </div>
                 </div>
-                <h2 className="font-heading text-4xl font-bold text-[var(--color-primary-navy)] leading-tight md:text-5xl">
-                  Transforming Industrial Logistics in KSA
-                </h2>
-                <div className="h-1 w-20 bg-[var(--color-accent-gold)]" />
-                <p className="text-xl text-[var(--color-text-muted)] leading-relaxed">
-                  {category.description}
-                </p>
-                <div className="pt-4">
-                  <Link
-                    href="/request-a-quote"
-                    className="group inline-flex items-center gap-4 text-lg font-bold text-[var(--color-primary-navy)]"
-                  >
-                    <span className="border-b-2 border-transparent transition-colors group-hover:border-[var(--color-accent-gold)]">Discuss Your Project Requirements</span>
-                    <ArrowRight className="h-5 w-5 text-[var(--color-accent-gold)] transition-transform group-hover:translate-x-2" />
-                  </Link>
-                </div>
-              </div>
-            </Reveal>
+              </Reveal>
+            </div>
 
-            <Reveal direction="left">
-              <div className="grid sm:grid-cols-2 gap-6 relative">
-                <div className="absolute inset-0 bg-gradient-to-br from-[var(--color-surface-soft)] to-white rounded-sm -z-10 transform translate-x-4 translate-y-4" />
-                {genericBenefits.map((benefit, index) => (
-                  <motion.div
-                    key={benefit.title}
-                    whileHover={{ y: -5 }}
-                    className="bg-white p-8 rounded-sm shadow-lg border border-black/5 group transition-all hover:border-[var(--color-accent-gold)]"
-                  >
-                    <div className="h-12 w-12 rounded-sm bg-[var(--color-surface-soft)] flex items-center justify-center text-[var(--color-primary-navy)] group-hover:bg-[var(--color-accent-gold)] transition-colors mb-6">
-                      <benefit.icon className="h-6 w-6" />
-                    </div>
-                    <h3 className="font-heading font-bold text-[var(--color-primary-navy)] text-lg mb-3">
-                      {benefit.title}
-                    </h3>
-                    <p className="text-[var(--color-text-muted)] text-sm leading-relaxed">
-                      {benefit.description}
-                    </p>
-                  </motion.div>
-                ))}
-              </div>
-            </Reveal>
+            {/* Right Column: Stunning Category Image Frame with Glassmorphism */}
+            <div className="lg:col-span-5 relative w-full aspect-[4/3] lg:aspect-square">
+              <Reveal direction="left">
+                <div className="relative h-full w-full rounded-sm overflow-hidden shadow-2xl border border-black/5 group">
+                  <Image
+                    src={categoryImages[category.slug] || "/assets/images/founder_operations.png"}
+                    alt={categoryAltTexts[category.slug] || "GQS Operations"}
+                    fill
+                    sizes="(max-width: 768px) 100vw, 40vw"
+                    className="object-cover transition-transform duration-700 group-hover:scale-105"
+                    priority
+                  />
+                  {/* Visual Accent Glow Frame */}
+                  <div className="absolute inset-0 bg-gradient-to-t from-[var(--color-primary-navy)]/40 via-transparent to-transparent" />
+                  <div className="absolute bottom-6 left-6 right-6 bg-white/10 backdrop-blur-md border border-white/20 p-6 rounded-sm">
+                    <span className="block text-xs font-black uppercase tracking-widest text-[var(--color-accent-gold)] mb-1">
+                      {category.title}
+                    </span>
+                    <span className="block text-sm font-semibold text-white">
+                      Operations Excellence & Technical Standards
+                    </span>
+                  </div>
+                </div>
+              </Reveal>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+      {/* Category Core Values & Key Advantages */}
+      <section className="py-20 bg-[var(--color-surface-soft)] border-y border-black/5">
+        <div className="container mx-auto px-4">
+          <Reveal direction="up">
+            <div className="text-center max-w-3xl mx-auto mb-16">
+              <h2 className="font-heading text-3xl font-bold text-[var(--color-primary-navy)] md:text-4xl">
+                Uncompromising Standards in {category.title}
+              </h2>
+              <div className="mx-auto mt-6 h-1 w-20 bg-[var(--color-accent-gold)]" />
+            </div>
+          </Reveal>
+          
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            {genericBenefits.map((benefit, index) => (
+              <motion.div
+                key={benefit.title}
+                whileHover={{ y: -5 }}
+                className="bg-white p-8 rounded-sm shadow-md border border-black/5 group transition-all hover:border-[var(--color-accent-gold)] flex flex-col justify-between"
+              >
+                <div>
+                  <div className="h-12 w-12 rounded-sm bg-[var(--color-surface-soft)] flex items-center justify-center text-[var(--color-primary-navy)] group-hover:bg-[var(--color-accent-gold)] group-hover:text-[var(--color-primary-navy)] transition-colors mb-6">
+                    <benefit.icon className="h-6 w-6" />
+                  </div>
+                  <h3 className="font-heading font-bold text-[var(--color-primary-navy)] text-lg mb-3">
+                    {benefit.title}
+                  </h3>
+                  <p className="text-[var(--color-text-muted)] text-sm leading-relaxed">
+                    {benefit.description}
+                  </p>
+                </div>
+              </motion.div>
+            ))}
           </div>
         </div>
       </section>

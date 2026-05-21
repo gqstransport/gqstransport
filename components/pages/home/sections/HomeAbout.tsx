@@ -14,7 +14,7 @@ export async function HomeAbout() {
             <div className="relative group">
               <div className="aspect-[4/5] relative rounded-sm overflow-hidden shadow-2xl">
                 <Image
-                  src="/about-logistics.png"
+                  src="/assets/images/image_12.jpeg"
                   alt="About GQS Logistics"
                   fill
                   className="object-cover transition-transform duration-700 group-hover:scale-110"

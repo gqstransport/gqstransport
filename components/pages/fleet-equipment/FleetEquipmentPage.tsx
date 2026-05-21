@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Link } from "@/i18n/navigation";
+import Image from "next/image";
 import { 
   ArrowRight, 
   Truck, 
@@ -34,6 +35,7 @@ const transportFleet = [
     applications: ["Steel transport", "Container movement", "Construction materials", "Industrial cargo logistics"],
     features: ["Long-distance transport", "Industrial cargo support", "Flexible loading capacity"],
     icon: Truck,
+    image: "/assets/images/fleet_flatbed.png",
   },
   {
     id: "lowbed",
@@ -42,6 +44,7 @@ const transportFleet = [
     applications: ["Excavator transportation", "Crane mobilization", "Heavy machinery transport", "Infrastructure equipment movement"],
     features: ["Oversized cargo handling", "Heavy equipment transport", "Safe machinery mobilization"],
     icon: Anchor,
+    image: "/assets/images/fleet_lowbed.png",
   },
   {
     id: "heavy-cargo",
@@ -50,6 +53,7 @@ const transportFleet = [
     applications: ["Project cargo handling", "Industrial equipment transport", "Oil & gas logistics", "Infrastructure support"],
     features: ["Specialized modular units", "Route survey planning", "Engineered tie-downs"],
     icon: Box,
+    image: "/assets/images/fleet_heavy_cargo.png",
   },
   {
     id: "boom-trucks",
@@ -58,6 +62,7 @@ const transportFleet = [
     applications: ["Site lifting support", "Equipment installation", "Industrial handling operations"],
     features: ["Integrated crane & deck", "Remote control operation", "Compact footprint"],
     icon: Activity,
+    image: "/assets/images/fleet_boom_truck.png",
   }
 ];
 
@@ -69,6 +74,7 @@ const machineryEquipment = [
     applications: ["Earthmoving", "Site excavation", "Infrastructure projects", "Construction support"],
     options: ["Daily Rental", "Weekly Rental", "Monthly Contracts"],
     icon: Settings,
+    image: "/assets/images/fleet_excavator.png",
   },
   {
     id: "cranes",
@@ -77,6 +83,7 @@ const machineryEquipment = [
     applications: ["Structural lifting", "Equipment installation", "Industrial shutdown projects", "Material handling"],
     options: ["TUV Certified", "Aramco Approved", "Full Rigging Sets"],
     icon: Target,
+    image: "/assets/images/fleet_crane.png",
   },
   {
     id: "wheel-loaders",
@@ -85,6 +92,7 @@ const machineryEquipment = [
     applications: ["Aggregate loading", "Construction support", "Site material movement"],
     options: ["High Capacity", "Fuel Efficient", "Operator Safety"],
     icon: Truck,
+    image: "/assets/images/fleet_wheel_loader.png",
   },
   {
     id: "forklifts",
@@ -93,6 +101,7 @@ const machineryEquipment = [
     applications: ["Warehouse logistics", "Factory operations", "Port cargo handling", "Material movement"],
     options: ["Electric & Diesel", "Various Mast Heights", "Side-shift Capability"],
     icon: Box,
+    image: "/assets/images/fleet_forklift.png",
   },
   {
     id: "earthmoving",
@@ -101,6 +110,7 @@ const machineryEquipment = [
     applications: ["Land preparation", "Road development", "Infrastructure projects"],
     options: ["GPS Grade Control", "Heavy Attachments", "24/7 Support"],
     icon: Settings,
+    image: "/assets/images/fleet_earthmoving.png",
   }
 ];
 
@@ -174,44 +184,58 @@ export function FleetEquipmentPage() {
           <div className="grid gap-8 md:grid-cols-2">
             {transportFleet.map((fleet, index) => (
               <Reveal key={fleet.id} direction="up" delay={index * 0.1}>
-                <div className="bg-white/5 backdrop-blur-md rounded-sm border border-white/10 p-8 h-full flex flex-col group hover:border-[var(--color-accent-gold)] hover:bg-white/10 transition-all duration-300">
-                  <div className="flex items-center gap-4 mb-6">
-                    <div className="w-14 h-14 bg-[var(--color-accent-gold)] text-[var(--color-primary-navy)] rounded-sm flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform">
-                      <fleet.icon className="h-7 w-7" />
-                    </div>
-                    <h3 className="font-heading text-2xl font-bold text-white">
-                      {fleet.title}
-                    </h3>
+                <div className="bg-white/5 backdrop-blur-md rounded-sm border border-white/10 overflow-hidden h-full flex flex-col group hover:border-[var(--color-accent-gold)] hover:bg-white/10 transition-all duration-300">
+                  {/* Image Header */}
+                  <div className="relative w-full h-64 overflow-hidden bg-zinc-800">
+                    <Image
+                      src={fleet.image}
+                      alt={fleet.title}
+                      fill
+                      sizes="(max-width: 768px) 100vw, 50vw"
+                      className="object-cover transition-transform duration-500 group-hover:scale-105"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-[var(--color-primary-navy)] via-[var(--color-primary-navy)]/40 to-transparent" />
                   </div>
-                  <p className="text-white/70 mb-8 leading-relaxed">
-                    {fleet.description}
-                  </p>
-                  
-                  <div className="mt-auto grid sm:grid-cols-2 gap-6">
-                    <div>
-                      <h4 className="text-xs font-bold uppercase tracking-widest text-[var(--color-accent-gold)] mb-4">Applications</h4>
-                      <ul className="space-y-2">
-                        {fleet.applications.map((app) => (
-                          <li key={app} className="flex items-start gap-2 text-sm text-white/80">
-                            <ChevronRight className="h-4 w-4 shrink-0 text-[var(--color-accent-gold)] mt-0.5" />
-                            <span>{app}</span>
-                          </li>
-                        ))}
-                      </ul>
+
+                  <div className="p-8 flex-1 flex flex-col">
+                    <div className="flex items-center gap-4 mb-6">
+                      <div className="w-14 h-14 bg-[var(--color-accent-gold)] text-[var(--color-primary-navy)] rounded-sm flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform">
+                        <fleet.icon className="h-7 w-7" />
+                      </div>
+                      <h3 className="font-heading text-2xl font-bold text-white">
+                        {fleet.title}
+                      </h3>
                     </div>
-                    {fleet.features && (
+                    <p className="text-white/70 mb-8 leading-relaxed">
+                      {fleet.description}
+                    </p>
+                    
+                    <div className="mt-auto grid sm:grid-cols-2 gap-6">
                       <div>
-                        <h4 className="text-xs font-bold uppercase tracking-widest text-[var(--color-accent-gold)] mb-4">Features</h4>
+                        <h4 className="text-xs font-bold uppercase tracking-widest text-[var(--color-accent-gold)] mb-4">Applications</h4>
                         <ul className="space-y-2">
-                          {fleet.features.map((feature) => (
-                            <li key={feature} className="flex items-start gap-2 text-sm text-white/80">
-                              <CheckCircle2 className="h-4 w-4 shrink-0 text-[var(--color-accent-gold)] mt-0.5" />
-                              <span>{feature}</span>
+                          {fleet.applications.map((app) => (
+                            <li key={app} className="flex items-start gap-2 text-sm text-white/80">
+                              <ChevronRight className="h-4 w-4 shrink-0 text-[var(--color-accent-gold)] mt-0.5" />
+                              <span>{app}</span>
                             </li>
                           ))}
                         </ul>
                       </div>
-                    )}
+                      {fleet.features && (
+                        <div>
+                          <h4 className="text-xs font-bold uppercase tracking-widest text-[var(--color-accent-gold)] mb-4">Features</h4>
+                          <ul className="space-y-2">
+                            {fleet.features.map((feature) => (
+                              <li key={feature} className="flex items-start gap-2 text-sm text-white/80">
+                                <CheckCircle2 className="h-4 w-4 shrink-0 text-[var(--color-accent-gold)] mt-0.5" />
+                                <span>{feature}</span>
+                              </li>
+                            ))}
+                          </ul>
+                        </div>
+                      )}
+                    </div>
                   </div>
                 </div>
               </Reveal>
@@ -259,7 +283,7 @@ export function FleetEquipmentPage() {
             </div>
 
             {/* Tab Content Display */}
-            <div className="lg:col-span-8 bg-[var(--color-surface-soft)] rounded-sm p-8 md:p-12 border border-black/5 shadow-sm min-h-[400px] flex items-center relative overflow-hidden">
+            <div className="lg:col-span-8 bg-[var(--color-surface-soft)] rounded-sm border border-black/5 shadow-sm min-h-[450px] overflow-hidden flex relative">
               <div className="absolute top-0 right-0 w-64 h-64 bg-white rounded-full mix-blend-screen blur-[80px] pointer-events-none" />
               
               <AnimatePresence mode="wait">
@@ -269,51 +293,66 @@ export function FleetEquipmentPage() {
                   animate={{ opacity: 1, x: 0 }}
                   exit={{ opacity: 0, x: -20 }}
                   transition={{ duration: 0.3 }}
-                  className="w-full relative z-10"
+                  className="w-full grid md:grid-cols-12 relative z-10"
                 >
-                  <div className="inline-flex items-center justify-center w-16 h-16 rounded-sm bg-[var(--color-primary-navy)] text-[var(--color-accent-gold)] mb-8 shadow-xl">
-                    {(() => {
-                      const ActiveIcon = machineryEquipment[activeTab].icon;
-                      return <ActiveIcon className="h-8 w-8" />;
-                    })()}
-                  </div>
-                  
-                  <h3 className="font-heading text-4xl font-bold text-[var(--color-primary-navy)] mb-6">
-                    {machineryEquipment[activeTab].title}
-                  </h3>
-                  <p className="text-xl text-[var(--color-text-muted)] leading-relaxed mb-10">
-                    {machineryEquipment[activeTab].description}
-                  </p>
-                  
-                  <div className="grid sm:grid-cols-2 gap-10">
-                    <div>
-                      <h4 className="text-xs font-bold uppercase tracking-widest text-[var(--color-primary-navy)] mb-4 flex items-center gap-2">
-                        <Briefcase className="h-4 w-4 text-[var(--color-accent-gold)]" />
-                        Applications
-                      </h4>
-                      <ul className="space-y-3">
-                        {machineryEquipment[activeTab].applications.map((app) => (
-                          <li key={app} className="flex items-start gap-3 text-[var(--color-text-muted)]">
-                            <ChevronRight className="h-5 w-5 shrink-0 text-[var(--color-accent-gold)]" />
-                            <span>{app}</span>
-                          </li>
-                        ))}
-                      </ul>
+                  {/* Left Column: Details */}
+                  <div className="md:col-span-7 p-8 md:p-12 flex flex-col justify-center">
+                    <div className="inline-flex items-center justify-center w-16 h-16 rounded-sm bg-[var(--color-primary-navy)] text-[var(--color-accent-gold)] mb-8 shadow-xl">
+                      {(() => {
+                        const ActiveIcon = machineryEquipment[activeTab].icon;
+                        return <ActiveIcon className="h-8 w-8" />;
+                      })()}
                     </div>
-                    <div>
-                      <h4 className="text-xs font-bold uppercase tracking-widest text-[var(--color-primary-navy)] mb-4 flex items-center gap-2">
-                        <CheckCircle2 className="h-4 w-4 text-[var(--color-accent-gold)]" />
-                        Rental Options
-                      </h4>
-                      <div className="flex flex-col gap-3">
-                        {machineryEquipment[activeTab].options.map((opt) => (
-                          <div key={opt} className="bg-white px-4 py-3 rounded-sm border border-black/5 shadow-sm font-semibold text-[var(--color-primary-navy)] text-sm flex items-center gap-2">
-                            <div className="w-1.5 h-1.5 rounded-full bg-[var(--color-accent-gold)]" />
-                            {opt}
-                          </div>
-                        ))}
+                    
+                    <h3 className="font-heading text-3xl font-bold text-[var(--color-primary-navy)] mb-4">
+                      {machineryEquipment[activeTab].title}
+                    </h3>
+                    <p className="text-lg text-[var(--color-text-muted)] leading-relaxed mb-8">
+                      {machineryEquipment[activeTab].description}
+                    </p>
+                    
+                    <div className="grid sm:grid-cols-2 gap-8">
+                      <div>
+                        <h4 className="text-xs font-bold uppercase tracking-widest text-[var(--color-primary-navy)] mb-4 flex items-center gap-2">
+                          <Briefcase className="h-4 w-4 text-[var(--color-accent-gold)]" />
+                          Applications
+                        </h4>
+                        <ul className="space-y-2">
+                          {machineryEquipment[activeTab].applications.map((app) => (
+                            <li key={app} className="flex items-start gap-2 text-sm text-[var(--color-text-muted)]">
+                              <ChevronRight className="h-4 w-4 shrink-0 text-[var(--color-accent-gold)] mt-0.5" />
+                              <span>{app}</span>
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
+                      <div>
+                        <h4 className="text-xs font-bold uppercase tracking-widest text-[var(--color-primary-navy)] mb-4 flex items-center gap-2">
+                          <CheckCircle2 className="h-4 w-4 text-[var(--color-accent-gold)]" />
+                          Options
+                        </h4>
+                        <div className="flex flex-col gap-2">
+                          {machineryEquipment[activeTab].options.map((opt) => (
+                            <div key={opt} className="bg-white px-3 py-2 rounded-sm border border-black/5 shadow-xs font-semibold text-[var(--color-primary-navy)] text-xs flex items-center gap-2">
+                              <div className="w-1.5 h-1.5 rounded-full bg-[var(--color-accent-gold)]" />
+                              {opt}
+                            </div>
+                          ))}
+                        </div>
                       </div>
                     </div>
+                  </div>
+
+                  {/* Right Column: Machinery Image */}
+                  <div className="md:col-span-5 relative min-h-[300px] md:min-h-full w-full overflow-hidden bg-zinc-200">
+                    <Image
+                      src={machineryEquipment[activeTab].image}
+                      alt={machineryEquipment[activeTab].title}
+                      fill
+                      sizes="(max-width: 768px) 100vw, 30vw"
+                      className="object-cover"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t md:bg-gradient-to-r from-[var(--color-surface-soft)] via-transparent to-transparent w-full h-full" />
                   </div>
                 </motion.div>
               </AnimatePresence>

@@ -3,18 +3,11 @@ import Image from "next/image";
 import { Link } from "@/i18n/navigation";
 import { ArrowUpRight, MapPin } from "lucide-react";
 import { Reveal, StaggerContainer, StaggerItem } from "@/components/ui/motion-reveal";
+import { getProjects } from "@/lib/projects-data";
 
 export async function ProjectsList() {
   const t = await getTranslations("pages.projects.index");
-  const items = (await t.raw("items")) as Array<{
-    id: string;
-    title: string;
-    scope: string;
-    location: string;
-    equipment: string;
-    challenge: string;
-    image: string;
-  }>;
+  const items = await getProjects();
 
   return (
     <section className="bg-white py-24 lg:py-32 overflow-hidden">

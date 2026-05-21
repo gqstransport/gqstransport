@@ -45,7 +45,7 @@ export async function HomeHiabBoomTruck() {
           <div className="lg:col-span-7">
             <div className="relative aspect-[16/10] rounded-sm overflow-hidden shadow-2xl mb-8 group">
               <Image 
-                src="/hiab-truck.png" 
+                src="/assets/images/image_8.png" 
                 alt="Hiab Truck" 
                 fill 
                 className="object-cover transition-transform duration-700 group-hover:scale-110" 

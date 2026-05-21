@@ -1,9 +1,9 @@
-import { getTranslations } from "next-intl/server";
 import { PageHero } from "@/components/common/PageHero";
 import { MapPin, Box, Truck, AlertCircle, Calendar, ChevronLeft } from "lucide-react";
 import { Link } from "@/i18n/navigation";
 import Image from "next/image";
 import { Reveal } from "@/components/ui/motion-reveal";
+import { getProjects } from "@/lib/projects-data";
 
 interface Props {
   params: Promise<{ id: string }>;
@@ -11,16 +11,7 @@ interface Props {
 
 export default async function ProjectPage({ params }: Props) {
   const { id } = await params;
-  const t = await getTranslations("pages.projects.index");
-  const items = (await t.raw("items")) as Array<{
-    id: string;
-    title: string;
-    scope: string;
-    location: string;
-    equipment: string;
-    challenge: string;
-    image: string;
-  }>;
+  const items = await getProjects();
 
   const project = items.find((p) => p.id === id);
 

@@ -41,10 +41,10 @@ export async function AboutCertifications() {
               <div className="aspect-[1.4/1] relative bg-white p-4 rounded-sm border border-[var(--color-border)] shadow-xl overflow-hidden">
                 <div className="absolute inset-0 bg-gradient-to-br from-[var(--color-accent-gold)]/5 to-transparent pointer-events-none" />
                 <Image
-                  src="/certificate-placeholder.png"
+                  src="/assets/images/certificate.png"
                   alt="GQS Certification"
                   fill
-                  className="object-contain p-8 opacity-40 group-hover:opacity-100 transition-opacity duration-700"
+                  className="object-contain p-8 group-hover:opacity-100 transition-opacity duration-700"
                 />
                 {/* Decorative Seal */}
                 <div className="absolute bottom-8 right-8 h-20 w-20 rounded-full border-4 border-[var(--color-accent-gold)]/20 flex items-center justify-center">

@@ -1,7 +1,8 @@
 import { getTranslations } from "next-intl/server";
 import { Link } from "@/i18n/navigation";
-import { Phone, Mail, MapPin, Globe, Send } from "lucide-react";
+import { Phone, Mail, MapPin, Globe } from "lucide-react";
 import { ClientLogosMarquee } from "@/components/common/ClientLogosMarquee";
+import { NewsletterForm } from "@/components/common/NewsletterForm";
 import Image from "next/image";
 
 export async function AppFooter() {
@@ -20,18 +21,7 @@ export async function AppFooter() {
               <h3 className="text-2xl font-black uppercase tracking-tight italic">Stay Updated</h3>
               <p className="text-white/60 text-sm">Subscribe to our newsletter for the latest updates on heavy transport routes and machinery availability.</p>
             </div>
-            <form className="flex gap-2" suppressHydrationWarning>
-              <input
-                type="email"
-                placeholder="Enter your email"
-                className="flex-1 bg-white/5 border border-white/10 rounded-sm px-6 py-4 text-sm focus:outline-none focus:border-[var(--color-accent-gold)] transition-colors"
-                suppressHydrationWarning
-              />
-              <button className="bg-[var(--color-accent-gold)] text-[var(--color-primary-navy)] px-8 py-4 rounded-sm font-bold uppercase tracking-widest text-xs flex items-center gap-2 hover:bg-white transition-all shadow-lg active:scale-95" suppressHydrationWarning>
-                Subscribe
-                <Send className="h-4 w-4" />
-              </button>
-            </form>
+            <NewsletterForm />
           </div>
         </div>
       </div>
@@ -40,14 +30,22 @@ export async function AppFooter() {
         <div className="grid grid-cols-1 gap-16 lg:grid-cols-4">
           {/* Brand Info */}
           <div className="lg:col-span-1 space-y-8">
-            <Link href="/" className="group block shrink-0">
-              <div className="relative h-20 w-64 transition-transform group-hover:scale-105">
+            <Link href="/" className="group flex shrink-0 items-center gap-3 transition-transform duration-200 mb-8">
+              <div className="relative h-12 w-12 sm:h-14 sm:w-14 transition-transform group-hover:scale-105">
                 <Image
                   src="/assets/images/logo.png"
                   alt="GQS Logo"
                   fill
-                  className="object-contain "
+                  className="object-contain"
                 />
+              </div>
+              <div className="flex flex-col text-start select-none">
+                <span className="font-heading text-lg sm:text-xl font-black leading-none tracking-tight text-white transition-colors group-hover:text-[var(--color-accent-gold)] uppercase">
+                  Gulf Quality
+                </span>
+                <span className="font-heading text-[10px] sm:text-[11px] font-bold leading-none tracking-[0.25em] text-[var(--color-accent-gold)] transition-colors group-hover:text-white mt-1.5 uppercase">
+                  Structure
+                </span>
               </div>
             </Link>
             <p className="text-white/50 text-sm leading-relaxed">

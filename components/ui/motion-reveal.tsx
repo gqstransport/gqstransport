@@ -9,6 +9,7 @@ interface RevealProps {
   delay?: number;
   direction?: "up" | "down" | "left" | "right";
   distance?: number;
+  className?: string;
 }
 
 export function Reveal({
@@ -17,6 +18,7 @@ export function Reveal({
   delay = 0,
   direction = "up",
   distance = 50,
+  className,
 }: RevealProps) {
   const directions = {
     up: { y: distance },
@@ -27,6 +29,7 @@ export function Reveal({
 
   return (
     <motion.div
+      className={className}
       style={{ position: "relative", width, overflow: "visible" }}
       initial={{ opacity: 0, ...directions[direction] }}
       whileInView={{ opacity: 1, x: 0, y: 0 }}

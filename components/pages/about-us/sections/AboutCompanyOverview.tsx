@@ -48,7 +48,7 @@ export async function AboutCompanyOverview() {
             <div className="relative">
               <div className="aspect-[4/5] relative rounded-sm overflow-hidden shadow-2xl z-10">
                 <Image
-                  src="/about-logistics.png"
+                  src="/assets/images/image_12.jpeg"
                   alt="Company Overview"
                   fill
                   className="object-cover"

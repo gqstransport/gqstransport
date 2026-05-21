@@ -230,14 +230,22 @@ export function AppHeaderNav({ sections, quoteLabel, brand, menuOpenLabel, menuC
           )}
         >
           <div className="flex items-start justify-between gap-4 border-b border-black/5 px-5 py-5">
-            <Link href="/" className="min-w-0 text-start group" onClick={() => setMobileOpen(false)}>
-              <div className="relative h-12 w-40 transition-transform group-hover:scale-105">
+            <Link href="/" className="group flex shrink-0 items-center gap-2.5 min-w-0 text-start" onClick={() => setMobileOpen(false)}>
+              <div className="relative h-10 w-10 transition-transform group-hover:scale-105">
                 <Image 
                   src="/assets/images/logo.png" 
                   alt="GQS Logo" 
                   fill 
                   className="object-contain" 
                 />
+              </div>
+              <div className="flex flex-col text-start select-none">
+                <span className="font-heading text-sm sm:text-base font-black leading-none tracking-tight text-[var(--color-primary-navy)] transition-colors group-hover:text-[var(--color-accent-gold)] uppercase">
+                  Gulf Quality
+                </span>
+                <span className="font-heading text-[8px] sm:text-[9px] font-bold leading-none tracking-[0.24em] text-[var(--color-accent-gold)] transition-colors group-hover:text-[var(--color-primary-navy)] mt-1 uppercase">
+                  Structure
+                </span>
               </div>
             </Link>
             <button

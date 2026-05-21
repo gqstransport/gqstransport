@@ -16,6 +16,28 @@ import {
 import type { ServiceSubpage, ServiceCategory } from "@/lib/services-data";
 import { PageHero } from "@/components/common/PageHero";
 import { Reveal } from "@/components/ui/motion-reveal";
+import Image from "next/image";
+
+const serviceImages: Record<string, string> = {
+  // Service-specific subpage images
+  "flatbed-trailer-rental": "/assets/images/fleet_flatbed.png",
+  "lowbed-trailer-rental": "/assets/images/fleet_lowbed.png",
+  "excavator-rental": "/assets/images/fleet_excavator.png",
+  "crane-rental": "/assets/images/fleet_crane.png",
+  "hiab-truck-rental": "/assets/images/fleet_boom_truck.png",
+  "wheel-loader-rental": "/assets/images/fleet_wheel_loader.png",
+  "forklift-rental": "/assets/images/fleet_forklift.png",
+  "heavy-cargo-haulage": "/assets/images/fleet_heavy_cargo.png",
+  "industrial-logistics-coordination": "/assets/images/fleet_flatbed.png",
+  "industrial-rigging-support": "/assets/images/founder_operations.png",
+
+  // Category fallback images
+  "heavy-transport": "/assets/images/fleet_heavy_cargo.png",
+  "heavy-machinery-rental": "/assets/images/fleet_excavator.png",
+  "hiab-boom-truck-services": "/assets/images/image_8.png",
+  "project-logistics-support": "/assets/images/fleet_flatbed.png",
+  "industrial-support-services": "/assets/images/founder_operations.png",
+};
 
 type Props = {
   service: ServiceSubpage;
@@ -119,36 +141,59 @@ export function ServiceDetailPage({ service, category }: Props) {
               )}
             </div>
 
-            {/* Right: Applications Grid */}
+            {/* Right: Applications Grid & Equipment Visual */}
             <div className="lg:col-span-5">
-              {service.applications && service.applications.length > 0 && (
-                <Reveal direction="left">
-                  <div className="bg-white border border-black/5 rounded-sm p-8 shadow-lg sticky top-32">
-                    <div className="flex items-center gap-3 mb-8">
-                      <Briefcase className="h-6 w-6 text-[var(--color-accent-gold)]" />
-                      <h3 className="font-heading text-xl font-bold text-[var(--color-primary-navy)]">
-                        Primary Applications
-                      </h3>
-                    </div>
-                    
-                    <div className="flex flex-col gap-4">
-                      {service.applications.map((app, i) => (
-                        <motion.div 
-                          key={app}
-                          initial={{ opacity: 0, x: 20 }}
-                          whileInView={{ opacity: 1, x: 0 }}
-                          viewport={{ once: true }}
-                          transition={{ delay: i * 0.1 }}
-                          className="flex items-start gap-4 p-4 rounded-sm bg-[var(--color-surface-soft)] group hover:bg-[var(--color-primary-navy)] hover:text-white transition-colors"
-                        >
-                          <div className="mt-1 h-2 w-2 rounded-full bg-[var(--color-accent-gold)] group-hover:scale-150 transition-transform" />
-                          <span className="font-medium group-hover:text-white text-[var(--color-primary-navy)] transition-colors">{app}</span>
-                        </motion.div>
-                      ))}
+              <Reveal direction="left">
+                <div className="sticky top-32 space-y-8">
+                  {/* Service Visual Card */}
+                  <div className="relative w-full aspect-[4/3] rounded-sm overflow-hidden shadow-lg border border-black/5 group bg-[var(--color-surface-soft)]">
+                    <Image
+                      src={serviceImages[service.slug] || serviceImages[category.slug] || "/assets/images/founder_operations.png"}
+                      alt={service.title}
+                      fill
+                      sizes="(max-width: 768px) 100vw, 40vw"
+                      className="object-cover transition-transform duration-700 group-hover:scale-105"
+                      priority
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-[var(--color-primary-navy)]/50 via-transparent to-transparent" />
+                    <div className="absolute bottom-4 left-4 right-4 bg-white/10 backdrop-blur-md border border-white/20 px-5 py-4 rounded-sm">
+                      <span className="block text-[10px] font-black uppercase tracking-widest text-[var(--color-accent-gold)] mb-0.5">
+                        {category.title}
+                      </span>
+                      <span className="block text-sm font-bold text-white uppercase">
+                        {service.title}
+                      </span>
                     </div>
                   </div>
-                </Reveal>
-              )}
+
+                  {service.applications && service.applications.length > 0 && (
+                    <div className="bg-white border border-black/5 rounded-sm p-8 shadow-lg">
+                      <div className="flex items-center gap-3 mb-8">
+                        <Briefcase className="h-6 w-6 text-[var(--color-accent-gold)]" />
+                        <h3 className="font-heading text-xl font-bold text-[var(--color-primary-navy)]">
+                          Primary Applications
+                        </h3>
+                      </div>
+                      
+                      <div className="flex flex-col gap-4">
+                        {service.applications.map((app, i) => (
+                          <motion.div 
+                            key={app}
+                            initial={{ opacity: 0, x: 20 }}
+                            whileInView={{ opacity: 1, x: 0 }}
+                            viewport={{ once: true }}
+                            transition={{ delay: i * 0.1 }}
+                            className="flex items-start gap-4 p-4 rounded-sm bg-[var(--color-surface-soft)] group hover:bg-[var(--color-primary-navy)] hover:text-white transition-colors"
+                          >
+                            <div className="mt-1.5 h-2 w-2 rounded-full bg-[var(--color-accent-gold)] group-hover:scale-150 transition-transform" />
+                            <span className="font-medium group-hover:text-white text-[var(--color-primary-navy)] transition-colors">{app}</span>
+                          </motion.div>
+                        ))}
+                      </div>
+                    </div>
+                  )}
+                </div>
+              </Reveal>
             </div>
           </div>
         </div>

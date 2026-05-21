@@ -472,6 +472,43 @@
           "title": "Route Survey & Planning",
           "description": "LiDAR, swept-path analysis, and civil interface recommendations."
         }
+      },
+      "safetySection": {
+        "title": "Qualifications & Safety Excellence",
+        "subtitle": "Uncompromising Standards in Every Operation",
+        "description": "At Gulf Quality Structure Establishment, safety and operational quality are not just compliance requirements—they are the core of our culture. We maintain rigorous standards to ensure secure transportation, reliable equipment handling, and efficient project execution across Saudi Arabia.",
+        "stats": {
+          "lti": {
+            "value": "0",
+            "label": "Lost Time Injuries"
+          },
+          "compliance": {
+            "value": "100%",
+            "label": "HSE Compliance"
+          },
+          "audits": {
+            "value": "100%",
+            "label": "Third-Party Audits Passed"
+          }
+        },
+        "standards": [
+          {
+            "title": "ISO 9001:2015 Quality Management",
+            "desc": "Systematic process quality, preventative maintenance tracking, and continuous improvement metrics in place."
+          },
+          {
+            "title": "ISO 45001:2018 HSE Standards",
+            "desc": "Comprehensive occupational health & safety management systems ensuring zero operational risk."
+          },
+          {
+            "title": "Saudi Aramco & SABIC Approvals",
+            "desc": "Aramco & SABIC registered operators and compliant logistics coordination for restricted plant sites."
+          },
+          {
+            "title": "TUV Certified Riggers & Operators",
+            "desc": "All lifting and logistics operators are fully licensed and certified by leading international third-party institutions."
+          }
+        ]
       }
     },
     "fleetEquipment": {
@@ -550,7 +587,7 @@
             "location": "Dammam Industrial City",
             "equipment": "Lowbed Trailers, 100T Cranes, Support Vehicles",
             "challenge": "Coordinating 40+ units within a strict 48-hour mobilization window.",
-            "image": "/project-1.png"
+            "image": "/assets/images/image_1.jpeg"
           },
           {
             "id": "p2",
@@ -559,7 +596,7 @@
             "location": "Riyadh to Abu Dhabi, UAE",
             "equipment": "Extendable Flatbeds, Escort Convoys",
             "challenge": "Managing complex multi-border permits and oversized cargo engineering.",
-            "image": "/project-2.png"
+            "image": "/assets/images/image_11.png"
           },
           {
             "id": "p3",
@@ -568,7 +605,7 @@
             "location": "Jubail Industrial Port",
             "equipment": "Heavy-Duty Forklifts, Hiab Boom Trucks",
             "challenge": "Navigating high-traffic port limits under strict safety protocols.",
-            "image": "/project-3.png"
+            "image": "/assets/images/image_9.png"
           }
         ]
       },

@@ -1,6 +1,6 @@
 "use client";
 
-import { BlogPost, MOCK_BLOG_POSTS } from "@/lib/mock-blog-data";
+import { BlogPost } from "@/lib/mock-blog-data";
 import Image from "next/image";
 import { Link } from "@/i18n/navigation";
 import { Calendar, User, ChevronLeft, Share2, Clock, ArrowUpRight, CheckCircle2 } from "lucide-react";
@@ -9,11 +9,12 @@ import { MarkdownRenderer } from "./MarkdownRenderer";
 
 interface Props {
   post: BlogPost;
+  allPosts: BlogPost[];
 }
 
-export function BlogPostDetails({ post }: Props) {
+export function BlogPostDetails({ post, allPosts }: Props) {
   // Filter related posts (exclude current)
-  const relatedPosts = MOCK_BLOG_POSTS.filter(p => p.slug !== post.slug).slice(0, 3);
+  const relatedPosts = allPosts.filter(p => p.slug !== post.slug).slice(0, 3);
 
   const handleShare = () => {
     if (navigator.share) {

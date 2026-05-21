@@ -63,8 +63,8 @@ export async function AppHeader() {
 
       <div className="border-b border-black/[0.06] bg-[var(--color-surface-card)] shadow-[0_1px_0_rgba(12,31,60,0.04)]">
         <div className="mx-auto flex max-w-7xl items-center gap-4 px-4 py-3.5 sm:gap-6 sm:px-6 sm:py-4 lg:px-8">
-          <Link href="/" className="group flex shrink-0 items-center gap-3">
-            <div className="relative h-14 w-40 sm:h-16 sm:w-48 transition-transform group-hover:scale-105">
+          <Link href="/" className="group flex shrink-0 items-center gap-3 transition-transform duration-200">
+            <div className="relative h-11 w-11 sm:h-13 sm:w-13 transition-transform group-hover:scale-105">
               <Image 
                 src="/assets/images/logo.png" 
                 alt="GQS Logo" 
@@ -72,6 +72,14 @@ export async function AppHeader() {
                 className="object-contain"
                 priority
               />
+            </div>
+            <div className="flex flex-col text-start select-none">
+              <span className="font-heading text-base sm:text-lg font-black leading-none tracking-tight text-[var(--color-primary-navy)] transition-colors group-hover:text-[var(--color-accent-gold)] uppercase">
+                Gulf Quality
+              </span>
+              <span className="font-heading text-[9px] sm:text-[10px] font-bold leading-none tracking-[0.25em] text-[var(--color-accent-gold)] transition-colors group-hover:text-[var(--color-primary-navy)] mt-1 uppercase">
+                Structure
+              </span>
             </div>
           </Link>
 

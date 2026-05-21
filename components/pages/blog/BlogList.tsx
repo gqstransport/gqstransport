@@ -1,30 +1,30 @@
 "use client";
 
 import React, { useState, useMemo } from "react";
-import { MOCK_BLOG_POSTS, BlogPost } from "@/lib/mock-blog-data";
+import { BlogPost } from "@/lib/mock-blog-data";
 import Image from "next/image";
 import { Link } from "@/i18n/navigation";
 import { Calendar, Clock, Search, Filter, ArrowUpRight, User } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import { cn } from "@/lib/cn";
 
-export function BlogList() {
+export function BlogList({ posts }: { posts: BlogPost[] }) {
   const [searchTerm, setSearchTerm] = useState("");
   const [selectedCategory, setSelectedCategory] = useState("");
 
   const categories = useMemo(() => {
-    return Array.from(new Set(MOCK_BLOG_POSTS.map((post) => post.category))).sort();
-  }, []);
+    return Array.from(new Set(posts.map((post) => post.category))).sort();
+  }, [posts]);
 
   const filteredPosts = useMemo(() => {
-    return MOCK_BLOG_POSTS.filter((post) => {
+    return posts.filter((post) => {
       const matchesSearch =
         post.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
         post.excerpt.toLowerCase().includes(searchTerm.toLowerCase());
       const matchesCategory = !selectedCategory || post.category === selectedCategory;
       return matchesSearch && matchesCategory;
     });
-  }, [searchTerm, selectedCategory]);
+  }, [posts, searchTerm, selectedCategory]);
 
   return (
     <section className="bg-white py-24 lg:py-32">
