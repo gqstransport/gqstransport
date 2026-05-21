@@ -6,6 +6,7 @@ import { LanguageSwitcher } from "@/components/common/LanguageSwitcher";
 import { HEADER_NAV_ENTRIES } from "@/lib/header-nav-config";
 import type { ResolvedNavSection } from "@/lib/header-nav-config";
 import Image from "next/image";
+import { phoneToTelHref } from "@/lib/site-contact";
 
 export async function AppHeader() {
   const t = await getTranslations("nav");
@@ -34,7 +35,7 @@ export async function AppHeader() {
       <div className="border-b border-white/10 bg-[var(--color-ui-topbar)] text-white">
         <div className="mx-auto flex max-w-7xl flex-wrap items-center justify-between gap-x-6 gap-y-2 px-4 py-2.5 sm:px-6 lg:px-8">
           <div className="flex flex-wrap items-center gap-x-6 gap-y-2 text-[11px] font-medium text-white/85">
-            <a href={`tel:${th("phone").replace(/\s/g, "")}`} className="group flex items-center gap-2 transition hover:text-white">
+            <a href={phoneToTelHref(th("phone"))} className="group flex items-center gap-2 transition hover:text-white">
               <span className="flex h-7 w-7 items-center justify-center rounded-sm bg-[color-mix(in_srgb,var(--color-accent-gold)_25%,transparent)] text-[var(--color-accent-gold)] ring-1 ring-[var(--color-accent-gold)]/35 transition group-hover:bg-[var(--color-accent-gold)]/20">
                 <Phone className="h-3.5 w-3.5" aria-hidden strokeWidth={2} />
               </span>

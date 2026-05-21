@@ -169,7 +169,7 @@ export function QuoteForm() {
                       autoComplete="tel"
                       value={phone}
                       onChange={(e) => setPhone(e.target.value)}
-                      placeholder="+966 ..."
+                      placeholder="+971 54 432 2076"
                       className="w-full bg-gray-50 border border-gray-100 rounded-sm py-4 pl-12 pr-4 text-sm focus:outline-none focus:border-[var(--color-accent-gold)] transition-colors"
                     />
                   </div>

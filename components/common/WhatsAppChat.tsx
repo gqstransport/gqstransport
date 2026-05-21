@@ -4,6 +4,7 @@ import React, { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { MessageCircle, X, Send, User } from "lucide-react";
 import Image from "next/image";
+import { phoneToWhatsAppDigits } from "@/lib/site-contact";
 
 export const WhatsAppChat = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -18,7 +19,7 @@ export const WhatsAppChat = () => {
     return () => clearTimeout(timer);
   }, [isOpen]);
 
-  const whatsappNumber = "+966551234567";
+  const whatsappNumber = phoneToWhatsAppDigits();
 
   const handleSendMessage = (e: React.FormEvent) => {
     e.preventDefault();

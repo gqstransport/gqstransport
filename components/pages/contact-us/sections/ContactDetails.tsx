@@ -1,6 +1,7 @@
 import { getTranslations } from "next-intl/server";
 import { Phone, Mail, MapPin, MessageCircle } from "lucide-react";
 import { Reveal, StaggerContainer, StaggerItem } from "@/components/ui/motion-reveal";
+import { phoneToTelHref, phoneToWhatsAppHref } from "@/lib/site-contact";
 
 export async function ContactDetails() {
   const t = await getTranslations("header");
@@ -11,7 +12,7 @@ export async function ContactDetails() {
       icon: Phone,
       label: "Phone Support",
       value: t("phone"),
-      href: `tel:${t("phone").replace(/\s/g, "")}`,
+      href: phoneToTelHref(t("phone")),
       color: "bg-[var(--color-surface-soft)] text-[var(--color-primary-navy)]"
     },
     {
@@ -25,7 +26,7 @@ export async function ContactDetails() {
       icon: MessageCircle,
       label: "WhatsApp",
       value: "Chat With Us",
-      href: "https://wa.me/966551234567",
+      href: phoneToWhatsAppHref(t("phone")),
       color: "bg-[var(--color-accent-gold)] text-[var(--color-primary-navy)]",
       isHighlighted: true
     }

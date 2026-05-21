@@ -2,9 +2,11 @@ import { getTranslations } from "next-intl/server";
 import { Link } from "@/i18n/navigation";
 import { ArrowRight, PhoneCall, Mail } from "lucide-react";
 import { Reveal, StaggerContainer, StaggerItem } from "@/components/ui/motion-reveal";
+import { phoneToTelHref } from "@/lib/site-contact";
 
 export async function HomeCTA() {
   const t = await getTranslations("pages.home.cta");
+  const th = await getTranslations("header");
 
   return (
     <section className="bg-white py-24 lg:py-32 overflow-hidden">
@@ -49,27 +51,33 @@ export async function HomeCTA() {
                       </Link>
                       
                       <div className="flex flex-col sm:flex-row items-center gap-10">
-                        <div className="flex items-center gap-5 group cursor-pointer">
+                        <a
+                          href={phoneToTelHref(th("phone"))}
+                          className="flex items-center gap-5 group"
+                        >
                           <div className="flex h-14 w-14 items-center justify-center rounded-sm bg-white/5 border border-white/10 text-white transition-all group-hover:bg-[var(--color-accent-gold)] group-hover:text-[var(--color-primary-navy)] group-hover:scale-110">
                             <PhoneCall className="h-6 w-6" />
                           </div>
                           <div className="text-left">
                             <p className="text-[10px] font-bold uppercase tracking-[0.2em] text-white/40 mb-1">{t("contactText")}</p>
-                            <p className="text-xl font-black text-white italic tracking-tight">+966 55 000 0000</p>
+                            <p className="text-xl font-black text-white italic tracking-tight">{th("phone")}</p>
                           </div>
-                        </div>
+                        </a>
 
                         <div className="hidden sm:block w-px h-12 bg-white/10" />
 
-                        <div className="flex items-center gap-5 group cursor-pointer">
+                        <a
+                          href={`mailto:${th("email")}`}
+                          className="flex items-center gap-5 group"
+                        >
                           <div className="flex h-14 w-14 items-center justify-center rounded-sm bg-white/5 border border-white/10 text-white transition-all group-hover:bg-[var(--color-accent-gold)] group-hover:text-[var(--color-primary-navy)] group-hover:scale-110">
                             <Mail className="h-6 w-6" />
                           </div>
                           <div className="text-left">
                             <p className="text-[10px] font-bold uppercase tracking-[0.2em] text-white/40 mb-1">Email Us</p>
-                            <p className="text-xl font-black text-white italic tracking-tight">info@gqs.sa</p>
+                            <p className="text-xl font-black text-white italic tracking-tight">{th("email")}</p>
                           </div>
-                        </div>
+                        </a>
                       </div>
                     </div>
                   </StaggerItem>

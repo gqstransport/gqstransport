@@ -25,7 +25,7 @@ export default function TermsConditionsPage() {
             <p>We reserve the right to change, modify, or remove the contents of the Site at any time or for any reason at our sole discretion without notice. However, we have no obligation to update any information on our Site.</p>
 
             <h2>Contact Us</h2>
-            <p>In order to resolve a complaint regarding the Site or to receive further information regarding use of the Site, please contact us at: info@gqsksa.com.</p>
+            <p>In order to resolve a complaint regarding the Site or to receive further information regarding use of the Site, please contact us at: info@gqstransport.com.</p>
           </div>
         </div>
       </section>

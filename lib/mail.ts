@@ -38,7 +38,7 @@ export async function sendMail(options: {
 
   await transporter.sendMail({
     from: process.env.MAIL_FROM || "GQS Website <noreply@gqs.com>",
-    to: options.to || process.env.MAIL_TO || "info@gqs.com",
+    to: options.to || process.env.MAIL_TO || "info@gqstransport.com",
     replyTo: options.replyTo,
     subject: options.subject,
     html: options.html,

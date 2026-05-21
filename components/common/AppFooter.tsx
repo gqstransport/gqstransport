@@ -4,6 +4,7 @@ import { Phone, Mail, MapPin, Globe } from "lucide-react";
 import { ClientLogosMarquee } from "@/components/common/ClientLogosMarquee";
 import { NewsletterForm } from "@/components/common/NewsletterForm";
 import Image from "next/image";
+import { phoneToTelHref } from "@/lib/site-contact";
 
 export async function AppFooter() {
   const t = await getTranslations();
@@ -123,11 +124,21 @@ export async function AppFooter() {
               </li>
               <li className="flex items-center gap-4 group">
                 <Phone className="h-5 w-5 shrink-0 text-[var(--color-accent-gold)] group-hover:scale-110 transition-transform" />
-                <span className="text-sm font-bold text-white/50 group-hover:text-white transition-colors">+966 XX XXX XXXX</span>
+                <a
+                  href={phoneToTelHref(t("header.phone"))}
+                  className="text-sm font-bold text-white/50 transition-colors group-hover:text-white"
+                >
+                  {t("header.phone")}
+                </a>
               </li>
               <li className="flex items-center gap-4 group">
                 <Mail className="h-5 w-5 shrink-0 text-[var(--color-accent-gold)] group-hover:scale-110 transition-transform" />
-                <span className="text-sm font-bold text-white/50 group-hover:text-white transition-colors">info@gqsksa.com</span>
+                <a
+                  href={`mailto:${t("header.email")}`}
+                  className="text-sm font-bold text-white/50 transition-colors group-hover:text-white"
+                >
+                  {t("header.email")}
+                </a>
               </li>
               <li className="flex items-center gap-4 group">
                 <Globe className="h-5 w-5 shrink-0 text-[var(--color-accent-gold)] group-hover:scale-110 transition-transform" />

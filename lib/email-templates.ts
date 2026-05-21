@@ -146,7 +146,7 @@ export function contactAdminEmail(data: {
     preheader: `New contact from ${data.name}: ${data.subject}`,
     badge: "Contact Form",
     title: "New contact message",
-    subtitle: "A visitor submitted the contact form on gqsksa.com. Reply directly to this email.",
+    subtitle: "A visitor submitted the contact form on gqstransport.com. Reply directly to this email.",
     body,
     footerNote: "Internal notification — do not forward customer data without consent.",
   });
@@ -264,6 +264,6 @@ export function newsletterWelcomeEmail(email: string): string {
     title: "You're on the list",
     subtitle: "Industrial insights & fleet updates, delivered to your inbox.",
     body,
-    footerNote: "You received this because you subscribed at gqsksa.com",
+    footerNote: "You received this because you subscribed at gqstransport.com",
   });
 }

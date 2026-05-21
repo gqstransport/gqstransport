@@ -58,6 +58,5 @@ export const HEADER_NAV_ENTRIES: HeaderNavEntry[] = [
   },
   { kind: "link", href: "/fleet-equipment", navKey: "fleetEquipment" },
   { kind: "link", href: "/blog", navKey: "blog" },
-  { kind: "link", href: "/projects", navKey: "projects" },
   { kind: "link", href: "/contact-us", navKey: "contactUs" },
 ];

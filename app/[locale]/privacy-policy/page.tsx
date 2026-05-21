@@ -30,7 +30,7 @@ export default function PrivacyPolicyPage() {
             <p>We adopt appropriate data collection, storage and processing practices and security measures to protect against unauthorized access, alteration, disclosure or destruction of your personal information, username, password, transaction information and data stored on our Site.</p>
 
             <h2>Contacting Us</h2>
-            <p>If you have any questions about this Privacy Policy, the practices of this site, or your dealings with this site, please contact us at info@gqsksa.com.</p>
+            <p>If you have any questions about this Privacy Policy, the practices of this site, or your dealings with this site, please contact us at info@gqstransport.com.</p>
           </div>
         </div>
       </section>
