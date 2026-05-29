@@ -152,7 +152,7 @@ export function ContactForm() {
                     autoComplete="tel"
                     value={phone}
                     onChange={(e) => setPhone(e.target.value)}
-                    placeholder="+971 54 432 2076"
+                    placeholder="+91 97890 98633"
                     className="w-full bg-gray-50 border border-gray-200 rounded-sm py-4 pl-12 pr-4 text-sm focus:outline-none focus:border-[var(--color-accent-gold)] transition-colors"
                   />
                 </div>

@@ -57,7 +57,7 @@ export async function AppFooter() {
                   Gulf Quality
                 </span>
                 <span className="font-heading text-[10px] sm:text-[11px] font-bold leading-none tracking-[0.25em] text-[var(--color-accent-gold)] transition-colors group-hover:text-white mt-1.5 uppercase">
-                  Structure Est.
+                  Structure Establishment
                 </span>
               </div>
             </Link>

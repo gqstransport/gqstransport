@@ -133,10 +133,7 @@ export default function CompanyPolicyPage() {
             </div>
             <div className="flex flex-col sm:flex-row justify-center items-center gap-4 sm:gap-8 mt-4">
               <span className="flex items-center gap-2 text-gray-700 font-medium">
-                📞 +966 561811920
-              </span>
-              <span className="flex items-center gap-2 text-gray-700 font-medium">
-                📞 +971 544322076
+                📞 +91 97890 98633
               </span>
             </div>
             <p className="mt-8 text-xl font-heading font-black italic text-[var(--color-primary-navy)] tracking-wide">

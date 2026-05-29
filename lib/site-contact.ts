@@ -1,8 +1,9 @@
 /** Site-wide phone — used in header, footer, WhatsApp, and contact sections */
-export const SITE_PHONE_DISPLAY = "+971 54 432 2076";
+export const SITE_PHONE_DISPLAY = "+91 97890 98633";
+export const SITE_PHONE_WHATSAPP = "+919789098633";
 
 /** Site-wide contact email */
-export const SITE_EMAIL = "info@gqstransport.com";
+export const SITE_EMAIL = "trade@gqstransport.com";
 
 /** Digits only for wa.me (no + or spaces) */
 export function phoneToWhatsAppDigits(phone: string = SITE_PHONE_DISPLAY): string {
