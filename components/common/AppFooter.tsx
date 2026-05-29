@@ -11,8 +11,20 @@ export async function AppFooter() {
 
   return (
     <footer className="bg-[var(--color-primary-navy)] text-white relative overflow-hidden flex flex-col">
-      {/* Light Theme Marquee attached to top of footer */}
-      <ClientLogosMarquee />
+      {/* Cinematic Background Image */}
+      <div className="absolute inset-0 z-0 pointer-events-none">
+        <Image
+          src="/assets/images/quality_action_3_1780042023758.png"
+          alt="GQS Footer Background"
+          fill
+          className="object-cover opacity-30 mix-blend-luminosity"
+        />
+        <div className="absolute inset-0 bg-gradient-to-b from-[var(--color-primary-navy)]/90 to-[var(--color-primary-navy)]/95" />
+      </div>
+
+      <div className="relative z-10 flex flex-col w-full h-full">
+        {/* Light Theme Marquee attached to top of footer */}
+        <ClientLogosMarquee />
 
       {/* Newsletter Section */}
       <div className="border-b border-white/5">
@@ -45,7 +57,7 @@ export async function AppFooter() {
                   Gulf Quality
                 </span>
                 <span className="font-heading text-[10px] sm:text-[11px] font-bold leading-none tracking-[0.25em] text-[var(--color-accent-gold)] transition-colors group-hover:text-white mt-1.5 uppercase">
-                  Structure
+                  Structure Est.
                 </span>
               </div>
             </Link>
@@ -80,7 +92,7 @@ export async function AppFooter() {
                     className="text-sm font-bold uppercase tracking-widest text-white/40 hover:text-white transition-colors flex items-center gap-2 group"
                   >
                     <div className="h-px w-0 bg-[var(--color-accent-gold)] transition-all group-hover:w-4" />
-                    Privacy Policy
+                    Company Policy
                   </Link>
                 </li>
                 <li>
@@ -157,6 +169,7 @@ export async function AppFooter() {
             © {new Date().getFullYear()} GULF QUALITY STRUCTURE EST. All Rights Reserved.
           </p>
         </div>
+      </div>
       </div>
     </footer>
   );

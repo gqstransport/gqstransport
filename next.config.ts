@@ -27,6 +27,10 @@ function uploadRemotePatterns() {
       protocol: "https",
       hostname: "user-images.githubusercontent.com",
     },
+    {
+      protocol: "https",
+      hostname: "placehold.co",
+    },
   ];
 
   try {

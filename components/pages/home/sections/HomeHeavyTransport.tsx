@@ -1,12 +1,20 @@
 import { getTranslations } from "next-intl/server";
 import { Truck, Scale, ShieldCheck, Globe } from "lucide-react";
 import { Reveal, StaggerContainer, StaggerItem } from "@/components/ui/motion-reveal";
+import Image from "next/image";
 
 const solutionIcons = {
   flatbed: Truck,
   lowbed: Scale,
   heavyEquipment: ShieldCheck,
   crossBorder: Globe,
+} as const;
+
+const solutionImages = {
+  flatbed: "/assets/images/card_flatbed.png",
+  lowbed: "/assets/images/card_lowbed.png",
+  heavyEquipment: "/assets/images/card_heavy.png",
+  crossBorder: "/assets/images/card_crossborder.png",
 } as const;
 
 export async function HomeHeavyTransport() {
@@ -51,16 +59,30 @@ export async function HomeHeavyTransport() {
               const Icon = solutionIcons[key];
               return (
                 <StaggerItem key={key}>
-                  <div className="group h-full p-10 border border-[var(--color-border)] bg-white rounded-sm hover:bg-[var(--color-primary-navy)] transition-all duration-500 hover:shadow-2xl hover:-translate-y-2 flex flex-col">
-                    <div className="mb-8 inline-flex h-16 w-16 items-center justify-center rounded-sm bg-[var(--color-surface-soft)] text-[var(--color-primary-navy)] shadow-sm group-hover:bg-[var(--color-accent-gold)] group-hover:rotate-6 transition-all duration-500">
-                      <Icon className="h-8 w-8" />
+                  <div className="group h-[380px] border border-[var(--color-border)] rounded-sm transition-all duration-500 hover:shadow-2xl hover:-translate-y-2 flex flex-col relative overflow-hidden">
+                    <div className="absolute inset-0 z-0 bg-[var(--color-primary-navy)]">
+                       <Image 
+                         src={solutionImages[key]} 
+                         alt={t(`items.${key}.title`)} 
+                         fill 
+                         className="object-cover transition-transform duration-700 group-hover:scale-110 opacity-30 group-hover:opacity-100" 
+                       />
+                       <div className="absolute inset-0 bg-gradient-to-t from-[var(--color-primary-navy)] via-[var(--color-primary-navy)]/80 to-transparent group-hover:from-[var(--color-primary-navy)]/90 group-hover:via-[var(--color-primary-navy)]/40 group-hover:to-transparent transition-colors duration-500" />
                     </div>
-                    <h3 className="text-xl font-black uppercase tracking-tight text-[var(--color-primary-navy)] group-hover:text-white mb-4 transition-colors">
-                      {t(`items.${key}.title`)}
-                    </h3>
-                    <p className="text-gray-500 group-hover:text-white/70 transition-colors leading-relaxed text-sm font-medium">
-                      {t(`items.${key}.description`)}
-                    </p>
+                    
+                    <div className="relative z-10 flex flex-col h-full p-10">
+                      <div className="mb-auto inline-flex h-16 w-16 items-center justify-center rounded-sm bg-[var(--color-accent-gold)] text-[var(--color-primary-navy)] shadow-sm group-hover:rotate-6 transition-transform duration-500">
+                        <Icon className="h-8 w-8" />
+                      </div>
+                      <div className="mt-8">
+                        <h3 className="text-xl font-black uppercase tracking-tight text-white mb-4">
+                          {t(`items.${key}.title`)}
+                        </h3>
+                        <p className="text-white/70 leading-relaxed text-sm font-medium">
+                          {t(`items.${key}.description`)}
+                        </p>
+                      </div>
+                    </div>
                   </div>
                 </StaggerItem>
               );

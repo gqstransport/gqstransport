@@ -12,22 +12,27 @@ export async function HomeAbout() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-center">
           <Reveal direction="left">
             <div className="relative group">
-              <div className="aspect-[4/5] relative rounded-sm overflow-hidden shadow-2xl">
+              <div className="relative rounded-sm overflow-hidden shadow-2xl">
                 <Image
-                  src="/assets/images/image_12.jpeg"
+                  src="/assets/images/image-t1.png"
                   alt="About GQS Logistics"
-                  fill
-                  className="object-cover transition-transform duration-700 group-hover:scale-110"
+                  width={800}
+                  height={800}
+                  className="w-full h-auto object-contain transition-transform duration-700 group-hover:scale-110"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-[var(--color-primary-navy)]/40 to-transparent" />
+
+                {/* Text overlaid on the grey image gap */}
+
+
+                <div className="absolute inset-0 bg-gradient-to-t from-[var(--color-primary-navy)]/10 to-transparent pointer-events-none" />
               </div>
-              
+
               {/* Premium Badge */}
               <div className="absolute -bottom-8 -right-8 glass p-8 rounded-sm shadow-2xl hidden md:block border-l-4 border-l-[var(--color-accent-gold)]">
                 <p className="text-[var(--color-primary-navy)] font-black text-5xl italic leading-none">GQS</p>
                 <p className="text-[var(--color-primary-navy)] font-bold text-[10px] uppercase tracking-[0.3em] mt-3 opacity-70">Industrial Support</p>
               </div>
-              
+
               {/* Decorative Frame */}
               <div className="absolute -top-6 -left-6 w-32 h-32 border-t-2 border-l-2 border-[var(--color-accent-gold)] opacity-30 group-hover:opacity-100 transition-opacity duration-500" />
             </div>
@@ -42,7 +47,7 @@ export async function HomeAbout() {
                 <div className="h-1 w-20 bg-[var(--color-accent-gold)]" />
               </div>
             </Reveal>
-            
+
             <Reveal direction="right" delay={0.4}>
               <div className="space-y-6 text-base leading-relaxed text-gray-600">
                 <p className="font-bold text-[var(--color-primary-navy)] text-lg border-l-4 border-[var(--color-accent-gold)] pl-6">

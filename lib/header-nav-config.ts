@@ -54,9 +54,12 @@ export const HEADER_NAV_ENTRIES: HeaderNavEntry[] = [
       { href: "/services/hiab-boom-truck-services", group: "services", key: "hiabBoomTruck" },
       { href: "/services/project-logistics-support", group: "services", key: "projectLogistics" },
       { href: "/services/industrial-support-services", group: "services", key: "industrialSupportServices" },
+      { href: "/services/iot", group: "services", key: "iot" },
     ],
   },
   { kind: "link", href: "/fleet-equipment", navKey: "fleetEquipment" },
+  { kind: "link", href: "/quality", navKey: "quality" },
+  { kind: "link", href: "/safety", navKey: "safety" },
   { kind: "link", href: "/blog", navKey: "blog" },
   { kind: "link", href: "/contact-us", navKey: "contactUs" },
 ];

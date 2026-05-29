@@ -46,13 +46,21 @@ export async function AboutCompanyOverview() {
 
           <Reveal direction="right">
             <div className="relative">
-              <div className="aspect-[4/5] relative rounded-sm overflow-hidden shadow-2xl z-10">
+              <div className="relative rounded-sm overflow-hidden shadow-2xl z-10">
                 <Image
-                  src="/assets/images/image_12.jpeg"
+                  src="/assets/images/image-t1.png"
                   alt="Company Overview"
-                  fill
-                  className="object-cover"
+                  width={800}
+                  height={800}
+                  className="w-full h-auto object-contain"
                 />
+                
+                {/* Text overlaid on the grey image gap */}
+                <div className="absolute bottom-0 left-0 right-0 h-[45%] flex items-center justify-center p-8 text-center pointer-events-none">
+                  <h3 className="text-[var(--color-primary-navy)] font-black text-3xl sm:text-4xl lg:text-5xl uppercase tracking-widest leading-snug drop-shadow-sm">
+                    Excellence In <br/> Heavy Transport
+                  </h3>
+                </div>
               </div>
               {/* Decorative elements */}
               <div className="absolute -top-6 -right-6 w-32 h-32 border-t-4 border-r-4 border-[var(--color-accent-gold)]/20" />

@@ -7,6 +7,8 @@
     "industries": "Industries",
     "projects": "Projects",
     "blog": "Blog",
+    "quality": "Quality",
+    "safety": "Safety",
     "contactUs": "Contact Us",
     "requestAQuote": "Request a Quote"
   },
@@ -33,7 +35,8 @@
       "heavyMachineryRental": "Heavy machinery rental",
       "hiabBoomTruck": "Hiab / boom truck",
       "projectLogistics": "Project logistics",
-      "industrialSupportServices": "Industrial support services"
+      "industrialSupportServices": "Industrial support services",
+      "iot": "IoT Solutions"
     },
     "fleet": {
       "flatbedTrailers": "Flatbed trailers",
@@ -67,9 +70,25 @@
     "viewAll": "View all"
   },
   "pages": {
+    "quality": {
+      "title": "Quality Standards",
+      "description": "Our commitment to excellence and reliability.",
+      "commitmentTitle": "Unwavering Quality Commitment",
+      "commitmentDescription": "We strictly adhere to industry best practices to ensure all machinery and transport operations meet the highest standards.",
+      "coreStandards": "Our Core Standards",
+      "accreditationsTitle": "Global Accreditations",
+      "accreditationsDescription": "Recognized by leading industry authorities for our steadfast commitment to quality management and operational excellence."
+    },
+    "safety": {
+      "title": "Safety First",
+      "description": "Protecting our people, assets, and environment.",
+      "safetyFirstTitle": "Our Safety Culture",
+      "safetyFirstDescription": "Safety is not just a policy; it's the foundation of everything we do. We operate with a zero-incident mindset.",
+      "pillarsTitle": "Pillars of Safety"
+    },
     "home": {
       "hero": {
-        "kicker": "Gulf Quality Structure Establishment (GQS)",
+        "kicker": "Gulf Quality Structure Establishment (GQS) - Transportation",
         "titleLead": "Reliable Integrated Logistics Transportation",
         "titleHighlight": "Support Across KSA",
         "description": "Gulf Quality Structure Establishment (GQS) provides reliable heavy transport, machinery rental, and industrial logistics across Saudi Arabia.",
@@ -472,6 +491,13 @@
           "title": "Route Survey & Planning",
           "description": "LiDAR, swept-path analysis, and civil interface recommendations."
         }
+      },
+      "iot": {
+        "title": "IoT & Telematics",
+        "description": "Advanced tracking and analytics for heavy transport and machinery.",
+        "overviewTitle": "Smart Fleet Management",
+        "overviewDescription": "Gulf Quality Structure incorporates cutting-edge IoT technology into our fleet, ensuring optimal performance and safety.",
+        "benefitsTitle": "Why Choose Our IoT Solutions"
       },
       "safetySection": {
         "title": "Qualifications & Safety Excellence",

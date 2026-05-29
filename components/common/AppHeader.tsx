@@ -80,7 +80,7 @@ export async function AppHeader() {
                 Gulf Quality
               </span>
               <span className="font-heading text-[9px] sm:text-[10px] font-bold leading-none tracking-[0.25em] text-[var(--color-accent-gold)] transition-colors group-hover:text-[var(--color-primary-navy)] mt-1 uppercase">
-                Structure
+                Structure Est.
               </span>
             </div>
           </Link>

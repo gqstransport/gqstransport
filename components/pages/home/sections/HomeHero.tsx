@@ -12,7 +12,7 @@ export async function HomeHero() {
       {/* Background Image with Enhanced Multi-layer Overlay */}
       <div className="absolute inset-0 z-0">
         <Image
-          src="/hero-truck.png"
+          src="/assets/images/hero_truck_clean.png"
           alt="GQS Heavy Transport & Machinery Rental"
           fill
           className="object-cover object-center opacity-40 scale-105 animate-slow-zoom"
